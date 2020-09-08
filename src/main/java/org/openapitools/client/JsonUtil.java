@@ -125,6 +125,10 @@ public class JsonUtil {
       return new TypeToken<List<HostCreateParams>>(){}.getType();
     }
     
+    if ("IdentifierList".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IdentifierList>>(){}.getType();
+    }
+    
     if ("Image".equalsIgnoreCase(className)) {
       return new TypeToken<List<Image>>(){}.getType();
     }
@@ -361,6 +365,10 @@ public class JsonUtil {
     
     if ("HostCreateParams".equalsIgnoreCase(className)) {
       return new TypeToken<HostCreateParams>(){}.getType();
+    }
+    
+    if ("IdentifierList".equalsIgnoreCase(className)) {
+      return new TypeToken<IdentifierList>(){}.getType();
     }
     
     if ("Image".equalsIgnoreCase(className)) {

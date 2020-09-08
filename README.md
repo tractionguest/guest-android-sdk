@@ -85,12 +85,15 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuditLogsApi* | [**getAuditLog**](docs/AuditLogsApi.md#getAuditLog) | **GET** /audit_logs/{audit_log_id} | Get an AuditLog
 *AuditLogsApi* | [**getAuditLogs**](docs/AuditLogsApi.md#getAuditLogs) | **GET** /audit_logs | List all AuditLogs
+*BatchesApi* | [**batchDeleteInvites**](docs/BatchesApi.md#batchDeleteInvites) | **POST** /invites/batch_delete | Delete Multiple Invites
+*BatchesApi* | [**getBatch**](docs/BatchesApi.md#getBatch) | **GET** /batches/{batch_id} | Get a BatchJob
 *CapacitiesApi* | [**getCapacity**](docs/CapacitiesApi.md#getCapacity) | **GET** /locations/{location_id}/capacities | Get the current capacity details for a location
 *CapacitiesApi* | [**getCapacityForecast**](docs/CapacitiesApi.md#getCapacityForecast) | **GET** /locations/{location_id}/capacity_forecasts | Get the capacity details for a location
 *EmailTemplatesApi* | [**getEmailTemplates**](docs/EmailTemplatesApi.md#getEmailTemplates) | **GET** /email_templates | List all EmailTemplates
 *HostsApi* | [**createHost**](docs/HostsApi.md#createHost) | **POST** /hosts | Create a Host
 *HostsApi* | [**createHosts**](docs/HostsApi.md#createHosts) | **POST** /hosts/batch | Create multiple Hosts
 *HostsApi* | [**getHosts**](docs/HostsApi.md#getHosts) | **GET** /hosts | List all Hosts
+*InvitesApi* | [**batchDeleteInvites**](docs/InvitesApi.md#batchDeleteInvites) | **POST** /invites/batch_delete | Delete Multiple Invites
 *InvitesApi* | [**createLocationInvite**](docs/InvitesApi.md#createLocationInvite) | **POST** /locations/{location_id}/invites | Create an Invite
 *InvitesApi* | [**createRegistrationInvite**](docs/InvitesApi.md#createRegistrationInvite) | **POST** /registrations/{registration_id}/invites | Create an Invite from a Registration
 *InvitesApi* | [**deleteInvite**](docs/InvitesApi.md#deleteInvite) | **DELETE** /invites/{invite_id} | Deletes an Invite
@@ -137,6 +140,7 @@ Class | Method | HTTP request | Description
  - [Host](docs/Host.md)
  - [HostBatchCreateParams](docs/HostBatchCreateParams.md)
  - [HostCreateParams](docs/HostCreateParams.md)
+ - [IdentifierList](docs/IdentifierList.md)
  - [Image](docs/Image.md)
  - [InternalWatchlistResult](docs/InternalWatchlistResult.md)
  - [Invite](docs/Invite.md)

@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **totalRecords** | **Integer** |  |  [optional]
 **workerName** | **String** |  |  [optional]
 **user** | [**User**](User.md) |  |  [optional]
+**pending** | **Integer** |  |  [optional]
+**completed** | **Integer** |  |  [optional]
+**failed** | **Integer** |  |  [optional]
 
 
 

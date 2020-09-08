@@ -23,8 +23,10 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.BatchJob;
 import java.util.Date;
 import org.openapitools.client.model.ErrorsList;
+import org.openapitools.client.model.IdentifierList;
 import org.openapitools.client.model.InviteCreateParams;
 import org.openapitools.client.model.InviteDetail;
 import org.openapitools.client.model.InviteUpdateParams;
@@ -60,6 +62,124 @@ public class InvitesApi {
     return basePath;
   }
 
+  /**
+  * Delete Multiple Invites
+  * Queues up a \&quot;delete\&quot; background task for one or more &#x60;Invite&#x60; entities.
+   * @param identifierList 
+   * @return BatchJob
+  */
+  public BatchJob batchDeleteInvites (IdentifierList identifierList) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = identifierList;
+
+    // create path and map variables
+    String path = "/invites/batch_delete";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] { "TractionGuestAuth" };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (BatchJob) ApiInvoker.deserialize(localVarResponse, "", BatchJob.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Delete Multiple Invites
+   * Queues up a \&quot;delete\&quot; background task for one or more &#x60;Invite&#x60; entities.
+   * @param identifierList 
+  */
+  public void batchDeleteInvites (IdentifierList identifierList, final Response.Listener<BatchJob> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = identifierList;
+
+
+    // create path and map variables
+    String path = "/invites/batch_delete".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] { "TractionGuestAuth" };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((BatchJob) ApiInvoker.deserialize(localVarResponse,  "", BatchJob.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
   /**
   * Create an Invite
   * Creates a new &#x60;Invite&#x60; for a specific &#x60;Location&#x60;.

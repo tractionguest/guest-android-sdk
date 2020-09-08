@@ -17,9 +17,9 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * 
+ * The root of the BatchJob&#39;s schema.
  **/
-@ApiModel(description = "")
+@ApiModel(description = "The root of the BatchJob's schema.")
 public class BatchJob {
   
   @SerializedName("bid")
@@ -34,6 +34,12 @@ public class BatchJob {
   private String workerName = null;
   @SerializedName("user")
   private User user = null;
+  @SerializedName("pending")
+  private Integer pending = null;
+  @SerializedName("completed")
+  private Integer completed = null;
+  @SerializedName("failed")
+  private Integer failed = null;
 
   /**
    **/
@@ -95,6 +101,36 @@ public class BatchJob {
     this.user = user;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getPending() {
+    return pending;
+  }
+  public void setPending(Integer pending) {
+    this.pending = pending;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getCompleted() {
+    return completed;
+  }
+  public void setCompleted(Integer completed) {
+    this.completed = completed;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getFailed() {
+    return failed;
+  }
+  public void setFailed(Integer failed) {
+    this.failed = failed;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -110,7 +146,10 @@ public class BatchJob {
         (this.status == null ? batchJob.status == null : this.status.equals(batchJob.status)) &&
         (this.totalRecords == null ? batchJob.totalRecords == null : this.totalRecords.equals(batchJob.totalRecords)) &&
         (this.workerName == null ? batchJob.workerName == null : this.workerName.equals(batchJob.workerName)) &&
-        (this.user == null ? batchJob.user == null : this.user.equals(batchJob.user));
+        (this.user == null ? batchJob.user == null : this.user.equals(batchJob.user)) &&
+        (this.pending == null ? batchJob.pending == null : this.pending.equals(batchJob.pending)) &&
+        (this.completed == null ? batchJob.completed == null : this.completed.equals(batchJob.completed)) &&
+        (this.failed == null ? batchJob.failed == null : this.failed.equals(batchJob.failed));
   }
 
   @Override
@@ -122,6 +161,9 @@ public class BatchJob {
     result = 31 * result + (this.totalRecords == null ? 0: this.totalRecords.hashCode());
     result = 31 * result + (this.workerName == null ? 0: this.workerName.hashCode());
     result = 31 * result + (this.user == null ? 0: this.user.hashCode());
+    result = 31 * result + (this.pending == null ? 0: this.pending.hashCode());
+    result = 31 * result + (this.completed == null ? 0: this.completed.hashCode());
+    result = 31 * result + (this.failed == null ? 0: this.failed.hashCode());
     return result;
   }
 
@@ -136,6 +178,9 @@ public class BatchJob {
     sb.append("  totalRecords: ").append(totalRecords).append("\n");
     sb.append("  workerName: ").append(workerName).append("\n");
     sb.append("  user: ").append(user).append("\n");
+    sb.append("  pending: ").append(pending).append("\n");
+    sb.append("  completed: ").append(completed).append("\n");
+    sb.append("  failed: ").append(failed).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
