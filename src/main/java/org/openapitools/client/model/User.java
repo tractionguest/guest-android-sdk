@@ -37,6 +37,8 @@ public class User {
   private String firstName = null;
   @SerializedName("registration_portal_enabled")
   private Boolean registrationPortalEnabled = null;
+  @SerializedName("account_uuid")
+  private String accountUuid = null;
 
   /**
    **/
@@ -113,6 +115,16 @@ public class User {
     this.registrationPortalEnabled = registrationPortalEnabled;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getAccountUuid() {
+    return accountUuid;
+  }
+  public void setAccountUuid(String accountUuid) {
+    this.accountUuid = accountUuid;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -129,7 +141,8 @@ public class User {
         (this.email == null ? user.email == null : this.email.equals(user.email)) &&
         (this.lastName == null ? user.lastName == null : this.lastName.equals(user.lastName)) &&
         (this.firstName == null ? user.firstName == null : this.firstName.equals(user.firstName)) &&
-        (this.registrationPortalEnabled == null ? user.registrationPortalEnabled == null : this.registrationPortalEnabled.equals(user.registrationPortalEnabled));
+        (this.registrationPortalEnabled == null ? user.registrationPortalEnabled == null : this.registrationPortalEnabled.equals(user.registrationPortalEnabled)) &&
+        (this.accountUuid == null ? user.accountUuid == null : this.accountUuid.equals(user.accountUuid));
   }
 
   @Override
@@ -142,6 +155,7 @@ public class User {
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
     result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
     result = 31 * result + (this.registrationPortalEnabled == null ? 0: this.registrationPortalEnabled.hashCode());
+    result = 31 * result + (this.accountUuid == null ? 0: this.accountUuid.hashCode());
     return result;
   }
 
@@ -157,6 +171,7 @@ public class User {
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  registrationPortalEnabled: ").append(registrationPortalEnabled).append("\n");
+    sb.append("  accountUuid: ").append(accountUuid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
