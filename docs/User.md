@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **lastName** | **String** |  |  [optional]
 **firstName** | **String** | Determines if the registration portal has been enabled for this account |  [optional]
 **registrationPortalEnabled** | **Boolean** | Determines if the registration portal has been enabled for this account | 
+**accountUuid** | **String** |  |  [optional]
 
 
 
