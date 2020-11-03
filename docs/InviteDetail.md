@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **createdAt** | [**Date**](Date.md) |  |  [optional]
 **company** | **String** |  |  [optional]
+**onPremise** | **Boolean** |  |  [optional]
 **groupVisit** | [**GroupVisit**](GroupVisit.md) |  |  [optional]
 
 
