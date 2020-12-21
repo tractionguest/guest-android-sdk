@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.Host;
 import org.openapitools.client.model.Pagination;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -23,7 +24,7 @@ public class PaginatedHostsList {
   @SerializedName("pagination")
   private Pagination pagination = null;
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<Host> hosts = null;
 
   /**
    **/
@@ -38,10 +39,10 @@ public class PaginatedHostsList {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Object> getHosts() {
+  public List<Host> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<Host> hosts) {
     this.hosts = hosts;
   }
 

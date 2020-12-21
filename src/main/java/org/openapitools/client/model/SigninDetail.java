@@ -14,9 +14,12 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
+import org.openapitools.client.model.Host;
+import org.openapitools.client.model.Registration;
 import org.openapitools.client.model.SignableDocument;
 import org.openapitools.client.model.SigninAcknowledgement;
 import org.openapitools.client.model.SigninData;
+import org.openapitools.client.model.SigninWatchlist;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -31,9 +34,9 @@ public class SigninDetail {
   @SerializedName("documents")
   private List<SignableDocument> documents = null;
   @SerializedName("signin_watchlist")
-  private Object signinWatchlist = null;
+  private SigninWatchlist signinWatchlist = null;
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<Host> hosts = null;
   @SerializedName("signin_data")
   private List<SigninData> signinData = null;
   @SerializedName("signin_acknowledgement")
@@ -65,7 +68,7 @@ public class SigninDetail {
   @SerializedName("company")
   private String company = null;
   @SerializedName("registration")
-  private Object registration = null;
+  private Registration registration = null;
 
   /**
    **/
@@ -90,20 +93,20 @@ public class SigninDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getSigninWatchlist() {
+  public SigninWatchlist getSigninWatchlist() {
     return signinWatchlist;
   }
-  public void setSigninWatchlist(Object signinWatchlist) {
+  public void setSigninWatchlist(SigninWatchlist signinWatchlist) {
     this.signinWatchlist = signinWatchlist;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getHosts() {
+  public List<Host> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<Host> hosts) {
     this.hosts = hosts;
   }
 
@@ -262,10 +265,10 @@ public class SigninDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getRegistration() {
+  public Registration getRegistration() {
     return registration;
   }
-  public void setRegistration(Object registration) {
+  public void setRegistration(Registration registration) {
     this.registration = registration;
   }
 

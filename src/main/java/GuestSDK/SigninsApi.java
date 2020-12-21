@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.Date;
+import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.PaginatedSigninsList;
 import org.openapitools.client.model.Signin;
 import org.openapitools.client.model.SigninCreateParams;
@@ -41,7 +42,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class SigninsApi {
-  String basePath = "https://tractionguest.ca/api/v3";
+  String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -63,7 +64,7 @@ public class SigninsApi {
   /**
   * Create Signin
   * Creates a Signin
-   * @param signinCreateParams 
+   * @param signinCreateParams Params for creating a Signin can omit certain fields if a &#x60;registration_id&#x60; is present.
    * @return Signin
   */
   public Signin createSignin (SigninCreateParams signinCreateParams) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
@@ -121,7 +122,7 @@ public class SigninsApi {
       /**
    * Create Signin
    * Creates a Signin
-   * @param signinCreateParams 
+   * @param signinCreateParams Params for creating a Signin can omit certain fields if a &#x60;registration_id&#x60; is present.
   */
   public void createSignin (SigninCreateParams signinCreateParams, final Response.Listener<Signin> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = signinCreateParams;
@@ -461,11 +462,11 @@ public class SigninsApi {
   * Update a Signin
   * Update, acknowledge, or &#x60;Signout&#x60; a &#x60;Signin&#x60;
    * @param signinId 
-   * @param signinUpdateParams 
+   * @param signinUpdateParams The only updatable values for a &#x60;Signin&#x60; are &#x60;badge_number&#x60;, &#x60;badge_returned&#x60;, &#x60;is_accounted_for&#x60;, &#x60;is_signed_out&#x60;, and &#x60;is_acknowledged&#x60;.  &#x60;is_signed_out&#x60; and &#x60;is_acknowledged&#x60; are pseudo attributes that once set to true, are irreversible.
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Object
+   * @return SigninDetail
   */
-  public Object updateSignin (String signinId, SigninUpdateParams signinUpdateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SigninDetail updateSignin (String signinId, SigninUpdateParams signinUpdateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = signinUpdateParams;
     // verify the required parameter 'signinId' is set
     if (signinId == null) {
@@ -507,7 +508,7 @@ public class SigninsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (SigninDetail) ApiInvoker.deserialize(localVarResponse, "", SigninDetail.class);
       } else {
          return null;
       }
@@ -531,9 +532,9 @@ public class SigninsApi {
       /**
    * Update a Signin
    * Update, acknowledge, or &#x60;Signout&#x60; a &#x60;Signin&#x60;
-   * @param signinId    * @param signinUpdateParams    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * @param signinId    * @param signinUpdateParams The only updatable values for a &#x60;Signin&#x60; are &#x60;badge_number&#x60;, &#x60;badge_returned&#x60;, &#x60;is_accounted_for&#x60;, &#x60;is_signed_out&#x60;, and &#x60;is_acknowledged&#x60;.  &#x60;is_signed_out&#x60; and &#x60;is_acknowledged&#x60; are pseudo attributes that once set to true, are irreversible.   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void updateSignin (String signinId, SigninUpdateParams signinUpdateParams, String idempotencyKey, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+  public void updateSignin (String signinId, SigninUpdateParams signinUpdateParams, String idempotencyKey, final Response.Listener<SigninDetail> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = signinUpdateParams;
 
     // verify the required parameter 'signinId' is set
@@ -584,7 +585,7 @@ public class SigninsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((SigninDetail) ApiInvoker.deserialize(localVarResponse,  "", SigninDetail.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

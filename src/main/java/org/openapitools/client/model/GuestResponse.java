@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.CustomField;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -25,7 +26,7 @@ public class GuestResponse {
   @SerializedName("id")
   private String id = null;
   @SerializedName("custom_fields")
-  private List<Object> customFields = null;
+  private List<CustomField> customFields = null;
   @SerializedName("page_type")
   private String pageType = null;
   @SerializedName("sequence")
@@ -48,10 +49,10 @@ public class GuestResponse {
    * Flex fields
    **/
   @ApiModelProperty(value = "Flex fields")
-  public List<Object> getCustomFields() {
+  public List<CustomField> getCustomFields() {
     return customFields;
   }
-  public void setCustomFields(List<Object> customFields) {
+  public void setCustomFields(List<CustomField> customFields) {
     this.customFields = customFields;
   }
 

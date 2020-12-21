@@ -14,6 +14,8 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
+import org.openapitools.client.model.CustomField;
+import org.openapitools.client.model.NotificationTriggerCreateParams;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -26,13 +28,13 @@ public class InviteCreateParams {
   @SerializedName("mobile_number")
   private String mobileNumber = null;
   @SerializedName("notification_triggers")
-  private List<Object> notificationTriggers = null;
+  private List<NotificationTriggerCreateParams> notificationTriggers = null;
   @SerializedName("first_name")
   private String firstName = null;
   @SerializedName("email_template_id")
   private Integer emailTemplateId = null;
   @SerializedName("custom_fields")
-  private List<Object> customFields = null;
+  private List<CustomField> customFields = null;
   @SerializedName("host_ids")
   private List<Integer> hostIds = null;
   public enum WatchlistColourEnum {
@@ -68,10 +70,10 @@ public class InviteCreateParams {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getNotificationTriggers() {
+  public List<NotificationTriggerCreateParams> getNotificationTriggers() {
     return notificationTriggers;
   }
-  public void setNotificationTriggers(List<Object> notificationTriggers) {
+  public void setNotificationTriggers(List<NotificationTriggerCreateParams> notificationTriggers) {
     this.notificationTriggers = notificationTriggers;
   }
 
@@ -98,10 +100,10 @@ public class InviteCreateParams {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getCustomFields() {
+  public List<CustomField> getCustomFields() {
     return customFields;
   }
-  public void setCustomFields(List<Object> customFields) {
+  public void setCustomFields(List<CustomField> customFields) {
     this.customFields = customFields;
   }
 

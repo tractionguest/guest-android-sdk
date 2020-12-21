@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **Integer** |  | 
 **mobileNumber** | **String** |  |  [optional]
 **signinWatchlist** | [**SigninWatchlist**](SigninWatchlist.md) |  |  [optional]
-**hosts** | **List&lt;Object&gt;** |  | 
+**hosts** | [**List&lt;Host&gt;**](Host.md) |  | 
 **signinTimestamp** | [**Date**](Date.md) |  |  [optional]
 **signinPhotoUrl** | **String** |  |  [optional]
 **signedOutTimestamp** | [**Date**](Date.md) |  |  [optional]

@@ -12,9 +12,13 @@
 
 package org.openapitools.client.model;
 
+import org.openapitools.client.model.User;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class BatchJob {
   
@@ -29,7 +33,7 @@ public class BatchJob {
   @SerializedName("worker_name")
   private String workerName = null;
   @SerializedName("user")
-  private Object user = null;
+  private User user = null;
 
   /**
    **/
@@ -84,10 +88,10 @@ public class BatchJob {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getUser() {
+  public User getUser() {
     return user;
   }
-  public void setUser(Object user) {
+  public void setUser(User user) {
     this.user = user;
   }
 

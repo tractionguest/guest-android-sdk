@@ -14,10 +14,14 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
+import org.openapitools.client.model.CustomField;
 import org.openapitools.client.model.EmailTemplate;
 import org.openapitools.client.model.GroupVisit;
+import org.openapitools.client.model.Host;
 import org.openapitools.client.model.InviteWatchlist;
+import org.openapitools.client.model.Location;
 import org.openapitools.client.model.NotificationTrigger;
+import org.openapitools.client.model.Registration;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -30,7 +34,7 @@ public class InviteDetail {
   @SerializedName("id")
   private Integer id = null;
   @SerializedName("registration")
-  private Object registration = null;
+  private Registration registration = null;
   @SerializedName("mobile_number")
   private String mobileNumber = null;
   @SerializedName("email_template")
@@ -40,16 +44,16 @@ public class InviteDetail {
   @SerializedName("notification_triggers")
   private List<NotificationTrigger> notificationTriggers = null;
   @SerializedName("custom_fields")
-  private List<Object> customFields = null;
+  private List<CustomField> customFields = null;
   public enum WatchlistColourEnum {
      RED,  GREEN,  YELLOW,  ORANGE, 
   };
   @SerializedName("watchlist_colour")
   private WatchlistColourEnum watchlistColour = null;
   @SerializedName("location")
-  private Object location = null;
+  private Location location = null;
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<Host> hosts = null;
   @SerializedName("start_date")
   private Date startDate = null;
   @SerializedName("last_name")
@@ -80,10 +84,10 @@ public class InviteDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getRegistration() {
+  public Registration getRegistration() {
     return registration;
   }
-  public void setRegistration(Object registration) {
+  public void setRegistration(Registration registration) {
     this.registration = registration;
   }
 
@@ -132,10 +136,10 @@ public class InviteDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getCustomFields() {
+  public List<CustomField> getCustomFields() {
     return customFields;
   }
-  public void setCustomFields(List<Object> customFields) {
+  public void setCustomFields(List<CustomField> customFields) {
     this.customFields = customFields;
   }
 
@@ -152,20 +156,20 @@ public class InviteDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getLocation() {
+  public Location getLocation() {
     return location;
   }
-  public void setLocation(Object location) {
+  public void setLocation(Location location) {
     this.location = location;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getHosts() {
+  public List<Host> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<Host> hosts) {
     this.hosts = hosts;
   }
 

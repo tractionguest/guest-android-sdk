@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.AuditLog;
+import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.PaginatedAuditLogsList;
 
 import org.apache.http.HttpEntity;
@@ -37,7 +38,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class AuditLogsApi {
-  String basePath = "https://tractionguest.ca/api/v3";
+  String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {

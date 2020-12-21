@@ -14,6 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
+import org.openapitools.client.model.Host;
 import org.openapitools.client.model.Registration;
 import org.openapitools.client.model.SigninWatchlist;
 import io.swagger.annotations.*;
@@ -29,7 +30,7 @@ public class Signin {
   @SerializedName("signin_watchlist")
   private SigninWatchlist signinWatchlist = null;
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<Host> hosts = null;
   @SerializedName("signin_timestamp")
   private Date signinTimestamp = null;
   @SerializedName("signin_photo_url")
@@ -86,10 +87,10 @@ public class Signin {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Object> getHosts() {
+  public List<Host> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<Host> hosts) {
     this.hosts = hosts;
   }
 

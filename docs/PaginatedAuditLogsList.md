@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | **Object** |  | 
-**auditLogs** | **List&lt;Object&gt;** |  | 
+**pagination** | [**Pagination**](Pagination.md) |  | 
+**auditLogs** | [**List&lt;AuditLog&gt;**](AuditLog.md) |  | 
 
 
 

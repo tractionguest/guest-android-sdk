@@ -125,8 +125,8 @@ public class JsonUtil {
       return new TypeToken<List<HostCreateParams>>(){}.getType();
     }
     
-    if ("ImageV1".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ImageV1>>(){}.getType();
+    if ("Image".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Image>>(){}.getType();
     }
     
     if ("InternalWatchlistResult".equalsIgnoreCase(className)) {
@@ -141,12 +141,12 @@ public class JsonUtil {
       return new TypeToken<List<InviteCreateParams>>(){}.getType();
     }
     
-    if ("InviteCreateParams1".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InviteCreateParams1>>(){}.getType();
-    }
-    
     if ("InviteDetail".equalsIgnoreCase(className)) {
       return new TypeToken<List<InviteDetail>>(){}.getType();
+    }
+    
+    if ("InviteUpdateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InviteUpdateParams>>(){}.getType();
     }
     
     if ("InviteWatchlist".equalsIgnoreCase(className)) {
@@ -165,16 +165,16 @@ public class JsonUtil {
       return new TypeToken<List<NotificationTrigger>>(){}.getType();
     }
     
-    if ("NotificationTrigger1".equalsIgnoreCase(className)) {
-      return new TypeToken<List<NotificationTrigger1>>(){}.getType();
+    if ("NotificationTriggerCreateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<List<NotificationTriggerCreateParams>>(){}.getType();
     }
     
-    if ("PackageCreateParamsV1".equalsIgnoreCase(className)) {
-      return new TypeToken<List<PackageCreateParamsV1>>(){}.getType();
+    if ("PackageCreateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PackageCreateParams>>(){}.getType();
     }
     
-    if ("PackageUpdateParamsV1".equalsIgnoreCase(className)) {
-      return new TypeToken<List<PackageUpdateParamsV1>>(){}.getType();
+    if ("PackageUpdateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PackageUpdateParams>>(){}.getType();
     }
     
     if ("PaginatedAuditLogsList".equalsIgnoreCase(className)) {
@@ -217,8 +217,8 @@ public class JsonUtil {
       return new TypeToken<List<Pagination>>(){}.getType();
     }
     
-    if ("Permission".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Permission>>(){}.getType();
+    if ("PermissionGroup".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PermissionGroup>>(){}.getType();
     }
     
     if ("Registration".equalsIgnoreCase(className)) {
@@ -363,8 +363,8 @@ public class JsonUtil {
       return new TypeToken<HostCreateParams>(){}.getType();
     }
     
-    if ("ImageV1".equalsIgnoreCase(className)) {
-      return new TypeToken<ImageV1>(){}.getType();
+    if ("Image".equalsIgnoreCase(className)) {
+      return new TypeToken<Image>(){}.getType();
     }
     
     if ("InternalWatchlistResult".equalsIgnoreCase(className)) {
@@ -379,12 +379,12 @@ public class JsonUtil {
       return new TypeToken<InviteCreateParams>(){}.getType();
     }
     
-    if ("InviteCreateParams1".equalsIgnoreCase(className)) {
-      return new TypeToken<InviteCreateParams1>(){}.getType();
-    }
-    
     if ("InviteDetail".equalsIgnoreCase(className)) {
       return new TypeToken<InviteDetail>(){}.getType();
+    }
+    
+    if ("InviteUpdateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<InviteUpdateParams>(){}.getType();
     }
     
     if ("InviteWatchlist".equalsIgnoreCase(className)) {
@@ -403,16 +403,16 @@ public class JsonUtil {
       return new TypeToken<NotificationTrigger>(){}.getType();
     }
     
-    if ("NotificationTrigger1".equalsIgnoreCase(className)) {
-      return new TypeToken<NotificationTrigger1>(){}.getType();
+    if ("NotificationTriggerCreateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<NotificationTriggerCreateParams>(){}.getType();
     }
     
-    if ("PackageCreateParamsV1".equalsIgnoreCase(className)) {
-      return new TypeToken<PackageCreateParamsV1>(){}.getType();
+    if ("PackageCreateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<PackageCreateParams>(){}.getType();
     }
     
-    if ("PackageUpdateParamsV1".equalsIgnoreCase(className)) {
-      return new TypeToken<PackageUpdateParamsV1>(){}.getType();
+    if ("PackageUpdateParams".equalsIgnoreCase(className)) {
+      return new TypeToken<PackageUpdateParams>(){}.getType();
     }
     
     if ("PaginatedAuditLogsList".equalsIgnoreCase(className)) {
@@ -455,8 +455,8 @@ public class JsonUtil {
       return new TypeToken<Pagination>(){}.getType();
     }
     
-    if ("Permission".equalsIgnoreCase(className)) {
-      return new TypeToken<Permission>(){}.getType();
+    if ("PermissionGroup".equalsIgnoreCase(className)) {
+      return new TypeToken<PermissionGroup>(){}.getType();
     }
     
     if ("Registration".equalsIgnoreCase(className)) {

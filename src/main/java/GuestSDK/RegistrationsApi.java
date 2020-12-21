@@ -23,6 +23,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.PaginatedRegistrationsList;
 import org.openapitools.client.model.RegistrationDetail;
 
@@ -37,7 +38,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class RegistrationsApi {
-  String basePath = "https://tractionguest.ca/api/v3";
+  String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {

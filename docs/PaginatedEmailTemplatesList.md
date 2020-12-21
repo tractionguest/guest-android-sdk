@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | **Object** |  | 
-**emailTemplates** | **List&lt;Object&gt;** |  | 
+**pagination** | [**Pagination**](Pagination.md) |  | 
+**emailTemplates** | [**List&lt;EmailTemplate&gt;**](EmailTemplate.md) |  | 
 
 
 

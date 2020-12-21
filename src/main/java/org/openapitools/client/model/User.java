@@ -13,7 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.Permission;
+import org.openapitools.client.model.PermissionGroup;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -28,7 +28,7 @@ public class User {
   @SerializedName("mobile_access_enabled")
   private Boolean mobileAccessEnabled = null;
   @SerializedName("permission_groups")
-  private List<Permission> permissionGroups = null;
+  private List<PermissionGroup> permissionGroups = null;
   @SerializedName("email")
   private String email = null;
   @SerializedName("last_name")
@@ -64,14 +64,15 @@ public class User {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Permission> getPermissionGroups() {
+  public List<PermissionGroup> getPermissionGroups() {
     return permissionGroups;
   }
-  public void setPermissionGroups(List<Permission> permissionGroups) {
+  public void setPermissionGroups(List<PermissionGroup> permissionGroups) {
     this.permissionGroups = permissionGroups;
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public String getEmail() {
@@ -82,6 +83,7 @@ public class User {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getLastName() {

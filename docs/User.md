@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
 **mobileAccessEnabled** | **Boolean** | Identifies if user has access to mobile app features. | 
-**permissionGroups** | [**List&lt;Permission&gt;**](Permission.md) |  |  [optional]
+**permissionGroups** | [**List&lt;PermissionGroup&gt;**](PermissionGroup.md) |  |  [optional]
 **email** | **String** |  | 
 **lastName** | **String** |  |  [optional]
 **firstName** | **String** | Determines if the registration portal has been enabled for this account |  [optional]

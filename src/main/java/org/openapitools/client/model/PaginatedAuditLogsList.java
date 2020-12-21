@@ -13,34 +13,39 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.AuditLog;
+import org.openapitools.client.model.Pagination;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class PaginatedAuditLogsList {
   
   @SerializedName("pagination")
-  private Object pagination = null;
+  private Pagination pagination = null;
   @SerializedName("audit_logs")
-  private List<Object> auditLogs = null;
+  private List<AuditLog> auditLogs = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Object getPagination() {
+  public Pagination getPagination() {
     return pagination;
   }
-  public void setPagination(Object pagination) {
+  public void setPagination(Pagination pagination) {
     this.pagination = pagination;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Object> getAuditLogs() {
+  public List<AuditLog> getAuditLogs() {
     return auditLogs;
   }
-  public void setAuditLogs(List<Object> auditLogs) {
+  public void setAuditLogs(List<AuditLog> auditLogs) {
     this.auditLogs = auditLogs;
   }
 

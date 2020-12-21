@@ -15,6 +15,9 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class WatchlistSearch {
   

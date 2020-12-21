@@ -13,6 +13,8 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.ModelPackage;
+import org.openapitools.client.model.Pagination;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,27 +22,27 @@ import com.google.gson.annotations.SerializedName;
 public class PaginatedPackagesList {
   
   @SerializedName("packages")
-  private List<Object> packages = null;
+  private List<ModelPackage> packages = null;
   @SerializedName("pagination")
-  private Object pagination = null;
+  private Pagination pagination = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Object> getPackages() {
+  public List<ModelPackage> getPackages() {
     return packages;
   }
-  public void setPackages(List<Object> packages) {
+  public void setPackages(List<ModelPackage> packages) {
     this.packages = packages;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Object getPagination() {
+  public Pagination getPagination() {
     return pagination;
   }
-  public void setPagination(Object pagination) {
+  public void setPagination(Pagination pagination) {
     this.pagination = pagination;
   }
 

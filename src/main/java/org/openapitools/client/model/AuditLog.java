@@ -49,6 +49,7 @@ public class AuditLog {
   private Integer auditableId = null;
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public Integer getId() {
@@ -59,6 +60,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getCreatedAt() {
@@ -69,6 +71,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getRequestUuid() {
@@ -79,6 +82,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getRemoteAddress() {
@@ -89,6 +93,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getComment() {
@@ -99,6 +104,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Integer getVersion() {
@@ -119,6 +125,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getAction() {
@@ -129,6 +136,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getUsername() {
@@ -139,6 +147,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Integer getUserId() {
@@ -149,6 +158,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getAuditableType() {
@@ -159,6 +169,7 @@ public class AuditLog {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Integer getAuditableId() {

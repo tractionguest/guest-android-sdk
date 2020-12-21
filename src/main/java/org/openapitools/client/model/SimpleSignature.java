@@ -15,6 +15,9 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class SimpleSignature {
   
@@ -28,6 +31,7 @@ public class SimpleSignature {
   private String title = null;
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getStatus() {
@@ -38,6 +42,7 @@ public class SimpleSignature {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getTemplateName() {
@@ -48,6 +53,7 @@ public class SimpleSignature {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getId() {
@@ -58,6 +64,7 @@ public class SimpleSignature {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getTitle() {

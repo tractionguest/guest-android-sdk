@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**registrations** | **List&lt;Object&gt;** |  |  [optional]
-**pagination** | **Object** |  |  [optional]
+**registrations** | [**List&lt;Registration&gt;**](Registration.md) |  |  [optional]
+**pagination** | [**Pagination**](Pagination.md) |  |  [optional]
 
 
 

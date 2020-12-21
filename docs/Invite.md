@@ -7,18 +7,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
-**registration** | **Object** |  |  [optional]
+**registration** | [**Registration**](Registration.md) |  |  [optional]
 **mobileNumber** | **String** |  |  [optional]
 **email** | **String** |  | 
 **endDate** | [**Date**](Date.md) |  |  [optional]
-**inviteWatchlist** | **Object** |  |  [optional]
-**hosts** | **List&lt;Object&gt;** |  |  [optional]
+**inviteWatchlist** | [**InviteWatchlist**](InviteWatchlist.md) |  |  [optional]
+**hosts** | [**List&lt;Host&gt;**](Host.md) |  |  [optional]
 **watchlistColour** | [**WatchlistColourEnum**](#WatchlistColourEnum) |  |  [optional]
-**location** | **Object** |  |  [optional]
+**location** | [**Location**](Location.md) |  |  [optional]
 **startDate** | [**Date**](Date.md) |  |  [optional]
 **lastName** | **String** |  | 
 **firstName** | **String** |  | 
-**groupVisit** | **Object** |  |  [optional]
+**groupVisit** | [**GroupVisit**](GroupVisit.md) |  |  [optional]
 
 
 ## Enum: WatchlistColourEnum

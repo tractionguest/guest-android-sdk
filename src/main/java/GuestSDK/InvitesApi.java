@@ -24,9 +24,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.Date;
+import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.InviteCreateParams;
-import org.openapitools.client.model.InviteCreateParams1;
 import org.openapitools.client.model.InviteDetail;
+import org.openapitools.client.model.InviteUpdateParams;
 import org.openapitools.client.model.PaginatedInvitesList;
 
 import org.apache.http.HttpEntity;
@@ -40,7 +41,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class InvitesApi {
-  String basePath = "https://tractionguest.ca/api/v3";
+  String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -65,9 +66,9 @@ public class InvitesApi {
    * @param locationId 
    * @param inviteCreateParams 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Object
+   * @return InviteDetail
   */
-  public Object createLocationInvite (String locationId, InviteCreateParams inviteCreateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public InviteDetail createLocationInvite (String locationId, InviteCreateParams inviteCreateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = inviteCreateParams;
     // verify the required parameter 'locationId' is set
     if (locationId == null) {
@@ -109,7 +110,7 @@ public class InvitesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (InviteDetail) ApiInvoker.deserialize(localVarResponse, "", InviteDetail.class);
       } else {
          return null;
       }
@@ -135,7 +136,7 @@ public class InvitesApi {
    * Creates a new &#x60;Invite&#x60; for a specific &#x60;Location&#x60;.
    * @param locationId    * @param inviteCreateParams    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void createLocationInvite (String locationId, InviteCreateParams inviteCreateParams, String idempotencyKey, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+  public void createLocationInvite (String locationId, InviteCreateParams inviteCreateParams, String idempotencyKey, final Response.Listener<InviteDetail> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = inviteCreateParams;
 
     // verify the required parameter 'locationId' is set
@@ -186,7 +187,7 @@ public class InvitesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((InviteDetail) ApiInvoker.deserialize(localVarResponse,  "", InviteDetail.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -206,9 +207,9 @@ public class InvitesApi {
   * Creates a new &#x60;Invite&#x60; from &#x60;Registration&#x60; data.
    * @param registrationId 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Object
+   * @return InviteDetail
   */
-  public Object createRegistrationInvite (String registrationId, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public InviteDetail createRegistrationInvite (String registrationId, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'registrationId' is set
     if (registrationId == null) {
@@ -244,7 +245,7 @@ public class InvitesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (InviteDetail) ApiInvoker.deserialize(localVarResponse, "", InviteDetail.class);
       } else {
          return null;
       }
@@ -270,7 +271,7 @@ public class InvitesApi {
    * Creates a new &#x60;Invite&#x60; from &#x60;Registration&#x60; data.
    * @param registrationId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void createRegistrationInvite (String registrationId, String idempotencyKey, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+  public void createRegistrationInvite (String registrationId, String idempotencyKey, final Response.Listener<InviteDetail> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'registrationId' is set
@@ -316,7 +317,7 @@ public class InvitesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((InviteDetail) ApiInvoker.deserialize(localVarResponse,  "", InviteDetail.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -743,21 +744,21 @@ public class InvitesApi {
   * Update an Invite
   * Updates an existing &#x60;Invite&#x60;.
    * @param inviteId 
-   * @param inviteCreateParams1 
+   * @param inviteUpdateParams Updated &#x60;Invite&#x60; information.
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Object
+   * @return InviteDetail
   */
-  public Object updateInvite (String inviteId, InviteCreateParams1 inviteCreateParams1, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = inviteCreateParams1;
+  public InviteDetail updateInvite (String inviteId, InviteUpdateParams inviteUpdateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = inviteUpdateParams;
     // verify the required parameter 'inviteId' is set
     if (inviteId == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'inviteId' when calling updateInvite",
         new ApiException(400, "Missing the required parameter 'inviteId' when calling updateInvite"));
     }
-    // verify the required parameter 'inviteCreateParams1' is set
-    if (inviteCreateParams1 == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'inviteCreateParams1' when calling updateInvite",
-        new ApiException(400, "Missing the required parameter 'inviteCreateParams1' when calling updateInvite"));
+    // verify the required parameter 'inviteUpdateParams' is set
+    if (inviteUpdateParams == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'inviteUpdateParams' when calling updateInvite",
+        new ApiException(400, "Missing the required parameter 'inviteUpdateParams' when calling updateInvite"));
     }
 
     // create path and map variables
@@ -789,7 +790,7 @@ public class InvitesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (InviteDetail) ApiInvoker.deserialize(localVarResponse, "", InviteDetail.class);
       } else {
          return null;
       }
@@ -813,20 +814,20 @@ public class InvitesApi {
       /**
    * Update an Invite
    * Updates an existing &#x60;Invite&#x60;.
-   * @param inviteId    * @param inviteCreateParams1    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * @param inviteId    * @param inviteUpdateParams Updated &#x60;Invite&#x60; information.   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void updateInvite (String inviteId, InviteCreateParams1 inviteCreateParams1, String idempotencyKey, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = inviteCreateParams1;
+  public void updateInvite (String inviteId, InviteUpdateParams inviteUpdateParams, String idempotencyKey, final Response.Listener<InviteDetail> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = inviteUpdateParams;
 
     // verify the required parameter 'inviteId' is set
     if (inviteId == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'inviteId' when calling updateInvite",
         new ApiException(400, "Missing the required parameter 'inviteId' when calling updateInvite"));
     }
-    // verify the required parameter 'inviteCreateParams1' is set
-    if (inviteCreateParams1 == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'inviteCreateParams1' when calling updateInvite",
-        new ApiException(400, "Missing the required parameter 'inviteCreateParams1' when calling updateInvite"));
+    // verify the required parameter 'inviteUpdateParams' is set
+    if (inviteUpdateParams == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'inviteUpdateParams' when calling updateInvite",
+        new ApiException(400, "Missing the required parameter 'inviteUpdateParams' when calling updateInvite"));
     }
 
     // create path and map variables
@@ -866,7 +867,7 @@ public class InvitesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((InviteDetail) ApiInvoker.deserialize(localVarResponse,  "", InviteDetail.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

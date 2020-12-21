@@ -14,6 +14,11 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.Date;
+import org.openapitools.client.model.GroupVisit;
+import org.openapitools.client.model.Host;
+import org.openapitools.client.model.InviteWatchlist;
+import org.openapitools.client.model.Location;
+import org.openapitools.client.model.Registration;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -26,7 +31,7 @@ public class Invite {
   @SerializedName("id")
   private Integer id = null;
   @SerializedName("registration")
-  private Object registration = null;
+  private Registration registration = null;
   @SerializedName("mobile_number")
   private String mobileNumber = null;
   @SerializedName("email")
@@ -34,16 +39,16 @@ public class Invite {
   @SerializedName("end_date")
   private Date endDate = null;
   @SerializedName("invite_watchlist")
-  private Object inviteWatchlist = null;
+  private InviteWatchlist inviteWatchlist = null;
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<Host> hosts = null;
   public enum WatchlistColourEnum {
      RED,  GREEN,  YELLOW,  ORANGE, 
   };
   @SerializedName("watchlist_colour")
   private WatchlistColourEnum watchlistColour = null;
   @SerializedName("location")
-  private Object location = null;
+  private Location location = null;
   @SerializedName("start_date")
   private Date startDate = null;
   @SerializedName("last_name")
@@ -51,7 +56,7 @@ public class Invite {
   @SerializedName("first_name")
   private String firstName = null;
   @SerializedName("group_visit")
-  private Object groupVisit = null;
+  private GroupVisit groupVisit = null;
 
   /**
    **/
@@ -66,14 +71,15 @@ public class Invite {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getRegistration() {
+  public Registration getRegistration() {
     return registration;
   }
-  public void setRegistration(Object registration) {
+  public void setRegistration(Registration registration) {
     this.registration = registration;
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getMobileNumber() {
@@ -84,6 +90,7 @@ public class Invite {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public String getEmail() {
@@ -94,6 +101,7 @@ public class Invite {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public Date getEndDate() {
@@ -106,20 +114,20 @@ public class Invite {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getInviteWatchlist() {
+  public InviteWatchlist getInviteWatchlist() {
     return inviteWatchlist;
   }
-  public void setInviteWatchlist(Object inviteWatchlist) {
+  public void setInviteWatchlist(InviteWatchlist inviteWatchlist) {
     this.inviteWatchlist = inviteWatchlist;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getHosts() {
+  public List<Host> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<Host> hosts) {
     this.hosts = hosts;
   }
 
@@ -136,10 +144,10 @@ public class Invite {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getLocation() {
+  public Location getLocation() {
     return location;
   }
-  public void setLocation(Object location) {
+  public void setLocation(Location location) {
     this.location = location;
   }
 
@@ -176,10 +184,10 @@ public class Invite {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getGroupVisit() {
+  public GroupVisit getGroupVisit() {
     return groupVisit;
   }
-  public void setGroupVisit(Object groupVisit) {
+  public void setGroupVisit(GroupVisit groupVisit) {
     this.groupVisit = groupVisit;
   }
 

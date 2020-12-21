@@ -13,6 +13,8 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.EmailTemplate;
+import org.openapitools.client.model.Pagination;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,27 +22,27 @@ import com.google.gson.annotations.SerializedName;
 public class PaginatedEmailTemplatesList {
   
   @SerializedName("pagination")
-  private Object pagination = null;
+  private Pagination pagination = null;
   @SerializedName("email_templates")
-  private List<Object> emailTemplates = null;
+  private List<EmailTemplate> emailTemplates = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Object getPagination() {
+  public Pagination getPagination() {
     return pagination;
   }
-  public void setPagination(Object pagination) {
+  public void setPagination(Pagination pagination) {
     this.pagination = pagination;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Object> getEmailTemplates() {
+  public List<EmailTemplate> getEmailTemplates() {
     return emailTemplates;
   }
-  public void setEmailTemplates(List<Object> emailTemplates) {
+  public void setEmailTemplates(List<EmailTemplate> emailTemplates) {
     this.emailTemplates = emailTemplates;
   }
 

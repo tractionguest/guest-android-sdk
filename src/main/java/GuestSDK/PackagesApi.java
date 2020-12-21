@@ -23,9 +23,10 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.ModelPackage;
-import org.openapitools.client.model.PackageCreateParamsV1;
-import org.openapitools.client.model.PackageUpdateParamsV1;
+import org.openapitools.client.model.PackageCreateParams;
+import org.openapitools.client.model.PackageUpdateParams;
 import org.openapitools.client.model.PaginatedPackagesList;
 
 import org.apache.http.HttpEntity;
@@ -39,7 +40,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class PackagesApi {
-  String basePath = "https://tractionguest.ca/api/v3";
+  String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -61,11 +62,11 @@ public class PackagesApi {
   /**
   * Create package
   * Creates a [Package] entity by extracting information about the recipient and carrier from the given image file.
-   * @param packageCreateParamsV1 
+   * @param packageCreateParams Parameters for creating a package
    * @return ModelPackage
   */
-  public ModelPackage createPackage (PackageCreateParamsV1 packageCreateParamsV1) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = packageCreateParamsV1;
+  public ModelPackage createPackage (PackageCreateParams packageCreateParams) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = packageCreateParams;
 
     // create path and map variables
     String path = "/packages";
@@ -119,10 +120,10 @@ public class PackagesApi {
       /**
    * Create package
    * Creates a [Package] entity by extracting information about the recipient and carrier from the given image file.
-   * @param packageCreateParamsV1 
+   * @param packageCreateParams Parameters for creating a package
   */
-  public void createPackage (PackageCreateParamsV1 packageCreateParamsV1, final Response.Listener<ModelPackage> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = packageCreateParamsV1;
+  public void createPackage (PackageCreateParams packageCreateParams, final Response.Listener<ModelPackage> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = packageCreateParams;
 
 
     // create path and map variables
@@ -307,9 +308,9 @@ public class PackagesApi {
   * Gets the details of a single instance of a Package
    * @param packageId 
    * @param include A list of comma-separated related models to include 
-   * @return Object
+   * @return ModelPackage
   */
-  public Object getPackage (String packageId, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ModelPackage getPackage (String packageId, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'packageId' is set
     if (packageId == null) {
@@ -345,7 +346,7 @@ public class PackagesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (ModelPackage) ApiInvoker.deserialize(localVarResponse, "", ModelPackage.class);
       } else {
          return null;
       }
@@ -371,7 +372,7 @@ public class PackagesApi {
    * Gets the details of a single instance of a Package
    * @param packageId    * @param include A list of comma-separated related models to include 
   */
-  public void getPackage (String packageId, String include, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+  public void getPackage (String packageId, String include, final Response.Listener<ModelPackage> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'packageId' is set
@@ -417,7 +418,7 @@ public class PackagesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((ModelPackage) ApiInvoker.deserialize(localVarResponse,  "", ModelPackage.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -571,11 +572,11 @@ public class PackagesApi {
   * Update/Edit information about a Package.  picked_up - changes the package_state to picked up and assigns non null value to picked_up_at  recipient_id - update the package&#39;s intended recipient. Changes package_state to &#39;recipient_matched&#39; if a match hasn&#39;t been found and notifies host about their package via email. A previous recipient will stop getting notifications  carrier_name - change/update the package&#39;s carrier/courier information    
    * @param packageId 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @param packageUpdateParamsV1 
-   * @return Object
+   * @param packageUpdateParams 
+   * @return ModelPackage
   */
-  public Object updatePackage (String packageId, String idempotencyKey, PackageUpdateParamsV1 packageUpdateParamsV1) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = packageUpdateParamsV1;
+  public ModelPackage updatePackage (String packageId, String idempotencyKey, PackageUpdateParams packageUpdateParams) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = packageUpdateParams;
     // verify the required parameter 'packageId' is set
     if (packageId == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'packageId' when calling updatePackage",
@@ -611,7 +612,7 @@ public class PackagesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
+         return (ModelPackage) ApiInvoker.deserialize(localVarResponse, "", ModelPackage.class);
       } else {
          return null;
       }
@@ -635,10 +636,10 @@ public class PackagesApi {
       /**
    * Update Package
    * Update/Edit information about a Package.  picked_up - changes the package_state to picked up and assigns non null value to picked_up_at  recipient_id - update the package&#39;s intended recipient. Changes package_state to &#39;recipient_matched&#39; if a match hasn&#39;t been found and notifies host about their package via email. A previous recipient will stop getting notifications  carrier_name - change/update the package&#39;s carrier/courier information    
-   * @param packageId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored   * @param packageUpdateParamsV1 
+   * @param packageId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored   * @param packageUpdateParams 
   */
-  public void updatePackage (String packageId, String idempotencyKey, PackageUpdateParamsV1 packageUpdateParamsV1, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = packageUpdateParamsV1;
+  public void updatePackage (String packageId, String idempotencyKey, PackageUpdateParams packageUpdateParams, final Response.Listener<ModelPackage> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = packageUpdateParams;
 
     // verify the required parameter 'packageId' is set
     if (packageId == null) {
@@ -683,7 +684,7 @@ public class PackagesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
+              responseListener.onResponse((ModelPackage) ApiInvoker.deserialize(localVarResponse,  "", ModelPackage.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

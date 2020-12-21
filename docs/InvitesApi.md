@@ -1,6 +1,6 @@
 # InvitesApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## createLocationInvite
 
-> Object createLocationInvite(locationId, inviteCreateParams, idempotencyKey)
+> InviteDetail createLocationInvite(locationId, inviteCreateParams, idempotencyKey)
 
 Create an Invite
 
@@ -29,10 +29,10 @@ Creates a new &#x60;Invite&#x60; for a specific &#x60;Location&#x60;.
 
 InvitesApi apiInstance = new InvitesApi();
 String locationId = null; // String | 
-InviteCreateParams inviteCreateParams = new InviteCreateParams(); // InviteCreateParams | 
+InviteCreateParams inviteCreateParams = {"company":"some text","email":"some text","end_date":"2020-07-17T01:59:59.999Z","last_name":"some text","start_date":"2020-07-17T01:59:59.999Z","title":"some text","watchlist_colour":"ORANGE","host_ids":[96,2],"custom_fields":[{"format":"string","field_name":"some text","field_value":"some text"},{"format":"string","field_name":"some text","field_value":"some text"}],"email_template_id":53,"mobile_number":"some text","first_name":"some text","notification_triggers":[{"offset_direction":"BEFORE","offset_unit":"days","offset_amount":34,"offset_origin":"START","email_template_id":63,"notification_groups":["some text","some text"]},{"offset_direction":"AFTER","offset_unit":"hours","offset_amount":12,"offset_origin":"END","email_template_id":2,"notification_groups":["some text","some text"]}]}; // InviteCreateParams | 
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
-    Object result = apiInstance.createLocationInvite(locationId, inviteCreateParams, idempotencyKey);
+    InviteDetail result = apiInstance.createLocationInvite(locationId, inviteCreateParams, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvitesApi#createLocationInvite");
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ## createRegistrationInvite
 
-> Object createRegistrationInvite(registrationId, idempotencyKey)
+> InviteDetail createRegistrationInvite(registrationId, idempotencyKey)
 
 Create an Invite from a Registration
 
@@ -81,7 +81,7 @@ InvitesApi apiInstance = new InvitesApi();
 String registrationId = null; // String | 
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
-    Object result = apiInstance.createRegistrationInvite(registrationId, idempotencyKey);
+    InviteDetail result = apiInstance.createRegistrationInvite(registrationId, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvitesApi#createRegistrationInvite");
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## updateInvite
 
-> Object updateInvite(inviteId, inviteCreateParams1, idempotencyKey)
+> InviteDetail updateInvite(inviteId, inviteUpdateParams, idempotencyKey)
 
 Update an Invite
 
@@ -290,10 +290,10 @@ Updates an existing &#x60;Invite&#x60;.
 
 InvitesApi apiInstance = new InvitesApi();
 String inviteId = null; // String | 
-InviteCreateParams1 inviteCreateParams1 = new InviteCreateParams1(); // InviteCreateParams1 | 
+InviteUpdateParams inviteUpdateParams = {"checked_in":true,"on_premise":true,"sent_email":"some text","user_id":45,"device_configuration_id":14}; // InviteUpdateParams | Updated `Invite` information.
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
-    Object result = apiInstance.updateInvite(inviteId, inviteCreateParams1, idempotencyKey);
+    InviteDetail result = apiInstance.updateInvite(inviteId, inviteUpdateParams, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvitesApi#updateInvite");
@@ -307,12 +307,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inviteId** | **String**|  | [default to null]
- **inviteCreateParams1** | [**InviteCreateParams1**](InviteCreateParams1.md)|  |
+ **inviteUpdateParams** | [**InviteUpdateParams**](InviteUpdateParams.md)| Updated &#x60;Invite&#x60; information. |
  **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
 
 ### Return type
 
-**Object**
+[**InviteDetail**](InviteDetail.md)
 
 ### Authorization
 

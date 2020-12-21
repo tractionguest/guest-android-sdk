@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | **Object** |  | 
-**signins** | **List&lt;Object&gt;** |  | 
+**pagination** | [**Pagination**](Pagination.md) |  | 
+**signins** | [**List&lt;Signin&gt;**](Signin.md) |  | 
 
 
 

@@ -1,6 +1,6 @@
 # HostsApi
 
-All URIs are relative to *https://tractionguest.ca/api/v3*
+All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ Creates a Host
 //import GuestSDK.HostsApi;
 
 HostsApi apiInstance = new HostsApi();
-HostCreateParams hostCreateParams = new HostCreateParams(); // HostCreateParams | 
+HostCreateParams hostCreateParams = {"email":"some text","first_name":"some text","last_name":"some text","profile_pic_url":"some text","department":"some text","mobile_number":"some text"}; // HostCreateParams | 
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
     Host result = apiInstance.createHost(hostCreateParams, idempotencyKey);

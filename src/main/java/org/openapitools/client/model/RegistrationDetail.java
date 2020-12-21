@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.Date;
 import org.openapitools.client.model.GuestResponse;
 import org.openapitools.client.model.Invite;
+import org.openapitools.client.model.Signin;
 import org.openapitools.client.model.Visitor;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -45,7 +46,7 @@ public class RegistrationDetail {
   @SerializedName("created_at")
   private Date createdAt = null;
   @SerializedName("signin")
-  private Object signin = null;
+  private Signin signin = null;
 
   /**
    * Registration unique identifier
@@ -147,10 +148,10 @@ public class RegistrationDetail {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getSignin() {
+  public Signin getSignin() {
     return signin;
   }
-  public void setSignin(Object signin) {
+  public void setSignin(Signin signin) {
     this.signin = signin;
   }
 

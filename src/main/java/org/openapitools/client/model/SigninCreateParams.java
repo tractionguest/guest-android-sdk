@@ -16,6 +16,9 @@ import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class SigninCreateParams {
   

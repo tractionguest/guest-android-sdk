@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hosts** | **List&lt;Object&gt;** |  |  [optional]
+**hosts** | [**List&lt;HostCreateParams&gt;**](HostCreateParams.md) |  |  [optional]
 
 
 

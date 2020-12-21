@@ -75,6 +75,7 @@ public class HostCreateParams {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getDepartment() {

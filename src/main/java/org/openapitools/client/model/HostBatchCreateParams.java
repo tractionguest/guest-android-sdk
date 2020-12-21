@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.HostCreateParams;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,15 +21,15 @@ import com.google.gson.annotations.SerializedName;
 public class HostBatchCreateParams {
   
   @SerializedName("hosts")
-  private List<Object> hosts = null;
+  private List<HostCreateParams> hosts = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getHosts() {
+  public List<HostCreateParams> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Object> hosts) {
+  public void setHosts(List<HostCreateParams> hosts) {
     this.hosts = hosts;
   }
 

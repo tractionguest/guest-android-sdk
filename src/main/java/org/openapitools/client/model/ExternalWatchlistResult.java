@@ -18,6 +18,9 @@ import org.openapitools.client.model.WatchlistSearch;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class ExternalWatchlistResult {
   
@@ -44,6 +47,7 @@ public class ExternalWatchlistResult {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public ColourEnum getColour() {
@@ -54,6 +58,7 @@ public class ExternalWatchlistResult {
   }
 
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
   public String getIntegration() {
