@@ -16,9 +16,6 @@ import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
 public class Docusign {
   
@@ -42,7 +39,6 @@ public class Docusign {
   private String title = null;
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getTemplateId() {
@@ -53,7 +49,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getIntegration() {
@@ -64,7 +59,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getNdaStatus() {
@@ -75,7 +69,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public Date getNdaSignedDate() {
@@ -86,7 +79,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEnvelopeId() {
@@ -97,7 +89,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getSequence() {
@@ -108,7 +99,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getDocusignId() {
@@ -119,7 +109,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getDocusignName() {
@@ -130,7 +119,6 @@ public class Docusign {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getTitle() {

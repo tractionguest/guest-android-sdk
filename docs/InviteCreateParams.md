@@ -7,10 +7,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mobileNumber** | **String** |  |  [optional]
-**notificationTriggers** | [**List&lt;NotificationTriggerCreateParams&gt;**](NotificationTriggerCreateParams.md) |  |  [optional]
+**notificationTriggers** | **List&lt;Object&gt;** |  |  [optional]
 **firstName** | **String** |  | 
 **emailTemplateId** | **Integer** |  |  [optional]
-**customFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  |  [optional]
+**customFields** | **List&lt;Object&gt;** |  |  [optional]
 **hostIds** | **List&lt;Integer&gt;** |  |  [optional]
 **watchlistColour** | [**WatchlistColourEnum**](#WatchlistColourEnum) |  |  [optional]
 **title** | **String** |  |  [optional]

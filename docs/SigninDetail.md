@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
 **documents** | [**List&lt;SignableDocument&gt;**](SignableDocument.md) |  |  [optional]
-**signinWatchlist** | [**SigninWatchlist**](SigninWatchlist.md) |  |  [optional]
-**hosts** | [**List&lt;Host&gt;**](Host.md) |  |  [optional]
+**signinWatchlist** | **Object** |  |  [optional]
+**hosts** | **List&lt;Object&gt;** |  |  [optional]
 **signinData** | [**List&lt;SigninData&gt;**](SigninData.md) |  |  [optional]
 **signinAcknowledgement** | [**SigninAcknowledgement**](SigninAcknowledgement.md) |  |  [optional]
 **note** | **String** |  |  [optional]
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  |  [optional]
 **email** | **String** |  |  [optional]
 **company** | **String** |  |  [optional]
-**registration** | [**Registration**](Registration.md) |  |  [optional]
+**registration** | **Object** |  |  [optional]
 
 
 

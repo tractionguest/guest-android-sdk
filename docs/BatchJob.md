@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **status** | **String** |  |  [optional]
 **totalRecords** | **Integer** |  |  [optional]
 **workerName** | **String** |  |  [optional]
-**user** | [**User**](User.md) |  |  [optional]
+**user** | **Object** |  |  [optional]
 
 
 

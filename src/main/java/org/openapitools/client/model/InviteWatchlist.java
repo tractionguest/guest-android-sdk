@@ -13,8 +13,6 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.ExternalWatchlistResult;
-import org.openapitools.client.model.InternalWatchlistResult;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -27,9 +25,9 @@ public class InviteWatchlist {
   @SerializedName("id")
   private Integer id = null;
   @SerializedName("internal")
-  private List<InternalWatchlistResult> internal = null;
+  private List<Object> internal = null;
   @SerializedName("external")
-  private List<ExternalWatchlistResult> external = null;
+  private List<Object> external = null;
   @SerializedName("internal_colours")
   private List<String> internalColours = null;
   @SerializedName("external_colours")
@@ -48,20 +46,20 @@ public class InviteWatchlist {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<InternalWatchlistResult> getInternal() {
+  public List<Object> getInternal() {
     return internal;
   }
-  public void setInternal(List<InternalWatchlistResult> internal) {
+  public void setInternal(List<Object> internal) {
     this.internal = internal;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<ExternalWatchlistResult> getExternal() {
+  public List<Object> getExternal() {
     return external;
   }
-  public void setExternal(List<ExternalWatchlistResult> external) {
+  public void setExternal(List<Object> external) {
     this.external = external;
   }
 

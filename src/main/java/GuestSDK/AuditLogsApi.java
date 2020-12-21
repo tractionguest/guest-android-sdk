@@ -24,7 +24,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.AuditLog;
-import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.PaginatedAuditLogsList;
 
 import org.apache.http.HttpEntity;

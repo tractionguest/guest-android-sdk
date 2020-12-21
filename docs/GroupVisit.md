@@ -7,8 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
-**location** | [**Location**](Location.md) |  |  [optional]
-**hosts** | [**List&lt;Host&gt;**](Host.md) |  |  [optional]
+**location** | **Object** |  |  [optional]
+**hosts** | **List&lt;Object&gt;** |  |  [optional]
 **name** | **String** |  |  [optional]
 **startTime** | **String** |  |  [optional]
 **endTime** | **String** |  |  [optional]

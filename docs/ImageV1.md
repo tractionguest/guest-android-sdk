@@ -1,12 +1,12 @@
 
 
-# HostBatchCreateParams
+# ImageV1
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hosts** | **List&lt;Object&gt;** |  |  [optional]
+**fullSizeUrl** | [**URI**](URI.md) |  |  [optional]
 
 
 

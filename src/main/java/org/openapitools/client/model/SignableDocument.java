@@ -18,9 +18,6 @@ import org.openapitools.client.model.SimpleSignature;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
 public class SignableDocument {
   

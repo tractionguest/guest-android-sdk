@@ -13,23 +13,18 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.Host;
-import org.openapitools.client.model.Location;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
 public class GroupVisit {
   
   @SerializedName("id")
   private Integer id = null;
   @SerializedName("location")
-  private Location location = null;
+  private Object location = null;
   @SerializedName("hosts")
-  private List<Host> hosts = null;
+  private List<Object> hosts = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("start_time")
@@ -54,20 +49,20 @@ public class GroupVisit {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Location getLocation() {
+  public Object getLocation() {
     return location;
   }
-  public void setLocation(Location location) {
+  public void setLocation(Object location) {
     this.location = location;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Host> getHosts() {
+  public List<Object> getHosts() {
     return hosts;
   }
-  public void setHosts(List<Host> hosts) {
+  public void setHosts(List<Object> hosts) {
     this.hosts = hosts;
   }
 

@@ -87,7 +87,6 @@ public class Host {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getDepartment() {

@@ -23,7 +23,6 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.PaginatedWatchlistList;
 import org.openapitools.client.model.Watchlist;
 import org.openapitools.client.model.WatchlistCreateParams;
@@ -61,7 +60,7 @@ public class WatchlistsApi {
   /**
   * Create Watchlist
   * Create a new &#x60;Watchlist&#x60; record. Please note, every action taken against this endpoint is recorded in the audit log.
-   * @param watchlistCreateParams The new &#x60;Watchlist&#x60; to create
+   * @param watchlistCreateParams 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
    * @return Watchlist
   */
@@ -126,7 +125,7 @@ public class WatchlistsApi {
       /**
    * Create Watchlist
    * Create a new &#x60;Watchlist&#x60; record. Please note, every action taken against this endpoint is recorded in the audit log.
-   * @param watchlistCreateParams The new &#x60;Watchlist&#x60; to create   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * @param watchlistCreateParams    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
   public void createWatchlist (WatchlistCreateParams watchlistCreateParams, String idempotencyKey, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = watchlistCreateParams;
@@ -320,9 +319,9 @@ public class WatchlistsApi {
   * Gets the details of a single instance of a &#x60;Watchlist&#x60;.
    * @param watchlistId 
    * @param include A list of comma-separated related models to include
-   * @return Watchlist
+   * @return Object
   */
-  public Watchlist getWatchlist (String watchlistId, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object getWatchlist (String watchlistId, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'watchlistId' is set
     if (watchlistId == null) {
@@ -358,7 +357,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Watchlist) ApiInvoker.deserialize(localVarResponse, "", Watchlist.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -384,7 +383,7 @@ public class WatchlistsApi {
    * Gets the details of a single instance of a &#x60;Watchlist&#x60;.
    * @param watchlistId    * @param include A list of comma-separated related models to include
   */
-  public void getWatchlist (String watchlistId, String include, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
+  public void getWatchlist (String watchlistId, String include, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'watchlistId' is set
@@ -430,7 +429,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Watchlist) ApiInvoker.deserialize(localVarResponse,  "", Watchlist.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -580,21 +579,21 @@ public class WatchlistsApi {
   * Update a Watchlist
   * Update an existing &#x60;Watchlist&#x60; record. Every operation against this endpoint is recorded in the audit log.
    * @param watchlistId 
-   * @param watchlistCreateParams The watchlist record attributes to update
+   * @param body The watchlist record attributes to update
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Watchlist
+   * @return Object
   */
-  public Watchlist updateWatchlist (String watchlistId, WatchlistCreateParams watchlistCreateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = watchlistCreateParams;
+  public Object updateWatchlist (String watchlistId, Object body, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
     // verify the required parameter 'watchlistId' is set
     if (watchlistId == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling updateWatchlist",
         new ApiException(400, "Missing the required parameter 'watchlistId' when calling updateWatchlist"));
     }
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling updateWatchlist",
+        new ApiException(400, "Missing the required parameter 'body' when calling updateWatchlist"));
     }
 
     // create path and map variables
@@ -626,7 +625,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Watchlist) ApiInvoker.deserialize(localVarResponse, "", Watchlist.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -650,20 +649,20 @@ public class WatchlistsApi {
       /**
    * Update a Watchlist
    * Update an existing &#x60;Watchlist&#x60; record. Every operation against this endpoint is recorded in the audit log.
-   * @param watchlistId    * @param watchlistCreateParams The watchlist record attributes to update   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * @param watchlistId    * @param body The watchlist record attributes to update   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void updateWatchlist (String watchlistId, WatchlistCreateParams watchlistCreateParams, String idempotencyKey, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = watchlistCreateParams;
+  public void updateWatchlist (String watchlistId, Object body, String idempotencyKey, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
 
     // verify the required parameter 'watchlistId' is set
     if (watchlistId == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling updateWatchlist",
         new ApiException(400, "Missing the required parameter 'watchlistId' when calling updateWatchlist"));
     }
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist"));
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling updateWatchlist",
+        new ApiException(400, "Missing the required parameter 'body' when calling updateWatchlist"));
     }
 
     // create path and map variables
@@ -703,7 +702,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Watchlist) ApiInvoker.deserialize(localVarResponse,  "", Watchlist.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

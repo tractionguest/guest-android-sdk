@@ -12,36 +12,24 @@
 
 package org.openapitools.client.model;
 
-import java.util.*;
+import java.net.URI;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class PaginatedRegistrationsList {
+public class ImageV1 {
   
-  @SerializedName("registrations")
-  private List<Object> registrations = null;
-  @SerializedName("pagination")
-  private Object pagination = null;
+  @SerializedName("full_size_url")
+  private URI fullSizeUrl = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getRegistrations() {
-    return registrations;
+  public URI getFullSizeUrl() {
+    return fullSizeUrl;
   }
-  public void setRegistrations(List<Object> registrations) {
-    this.registrations = registrations;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public Object getPagination() {
-    return pagination;
-  }
-  public void setPagination(Object pagination) {
-    this.pagination = pagination;
+  public void setFullSizeUrl(URI fullSizeUrl) {
+    this.fullSizeUrl = fullSizeUrl;
   }
 
 
@@ -53,26 +41,23 @@ public class PaginatedRegistrationsList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedRegistrationsList paginatedRegistrationsList = (PaginatedRegistrationsList) o;
-    return (this.registrations == null ? paginatedRegistrationsList.registrations == null : this.registrations.equals(paginatedRegistrationsList.registrations)) &&
-        (this.pagination == null ? paginatedRegistrationsList.pagination == null : this.pagination.equals(paginatedRegistrationsList.pagination));
+    ImageV1 imageV1 = (ImageV1) o;
+    return (this.fullSizeUrl == null ? imageV1.fullSizeUrl == null : this.fullSizeUrl.equals(imageV1.fullSizeUrl));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.registrations == null ? 0: this.registrations.hashCode());
-    result = 31 * result + (this.pagination == null ? 0: this.pagination.hashCode());
+    result = 31 * result + (this.fullSizeUrl == null ? 0: this.fullSizeUrl.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedRegistrationsList {\n");
+    sb.append("class ImageV1 {\n");
     
-    sb.append("  registrations: ").append(registrations).append("\n");
-    sb.append("  pagination: ").append(pagination).append("\n");
+    sb.append("  fullSizeUrl: ").append(fullSizeUrl).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

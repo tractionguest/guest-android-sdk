@@ -1,13 +1,14 @@
 
 
-# SigninData
+# Permission
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customFields** | **List&lt;Object&gt;** |  |  [optional]
 **name** | **String** |  |  [optional]
+**visibility** | **String** |  |  [optional]
+**permissions** | **List&lt;String&gt;** |  |  [optional]
 
 
 

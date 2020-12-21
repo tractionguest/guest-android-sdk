@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **email** | **String** | E-mail |  [optional]
 **name** | **String** | Guest&#39;s name |  [optional]
 **createdAt** | [**Date**](Date.md) | Datetime when registration was created | 
-**signin** | [**Signin**](Signin.md) |  |  [optional]
+**signin** | **Object** |  |  [optional]
 
 
 

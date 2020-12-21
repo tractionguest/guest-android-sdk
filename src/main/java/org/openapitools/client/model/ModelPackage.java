@@ -13,9 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.Date;
-import org.openapitools.client.model.Host;
-import org.openapitools.client.model.Image;
-import org.openapitools.client.model.Location;
+import org.openapitools.client.model.ImageV1;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -28,9 +26,9 @@ public class ModelPackage {
   @SerializedName("id")
   private Integer id = null;
   @SerializedName("recipient")
-  private Host recipient = null;
+  private Object recipient = null;
   @SerializedName("location")
-  private Location location = null;
+  private Object location = null;
   public enum PackageStateEnum {
      processing,  recipient_matched,  needs_attention,  picked_up, 
   };
@@ -43,7 +41,7 @@ public class ModelPackage {
   @SerializedName("created_at")
   private Date createdAt = null;
   @SerializedName("image")
-  private Image image = null;
+  private ImageV1 image = null;
 
   /**
    **/
@@ -58,20 +56,20 @@ public class ModelPackage {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Host getRecipient() {
+  public Object getRecipient() {
     return recipient;
   }
-  public void setRecipient(Host recipient) {
+  public void setRecipient(Object recipient) {
     this.recipient = recipient;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Location getLocation() {
+  public Object getLocation() {
     return location;
   }
-  public void setLocation(Location location) {
+  public void setLocation(Object location) {
     this.location = location;
   }
 
@@ -120,10 +118,10 @@ public class ModelPackage {
   /**
    **/
   @ApiModelProperty(value = "")
-  public Image getImage() {
+  public ImageV1 getImage() {
     return image;
   }
-  public void setImage(Image image) {
+  public void setImage(ImageV1 image) {
     this.image = image;
   }
 

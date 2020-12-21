@@ -13,7 +13,6 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.CustomField;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -21,17 +20,17 @@ import com.google.gson.annotations.SerializedName;
 public class SigninData {
   
   @SerializedName("custom_fields")
-  private List<CustomField> customFields = null;
+  private List<Object> customFields = null;
   @SerializedName("name")
   private String name = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<CustomField> getCustomFields() {
+  public List<Object> getCustomFields() {
     return customFields;
   }
-  public void setCustomFields(List<CustomField> customFields) {
+  public void setCustomFields(List<Object> customFields) {
     this.customFields = customFields;
   }
 

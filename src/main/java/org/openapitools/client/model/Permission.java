@@ -16,32 +16,47 @@ import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
-public class PaginatedRegistrationsList {
+/**
+ * The root of the Permission type&#39;s schema.
+ **/
+@ApiModel(description = "The root of the Permission type's schema.")
+public class Permission {
   
-  @SerializedName("registrations")
-  private List<Object> registrations = null;
-  @SerializedName("pagination")
-  private Object pagination = null;
+  @SerializedName("name")
+  private String name = null;
+  @SerializedName("visibility")
+  private String visibility = null;
+  @SerializedName("permissions")
+  private List<String> permissions = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<Object> getRegistrations() {
-    return registrations;
+  public String getName() {
+    return name;
   }
-  public void setRegistrations(List<Object> registrations) {
-    this.registrations = registrations;
+  public void setName(String name) {
+    this.name = name;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public Object getPagination() {
-    return pagination;
+  public String getVisibility() {
+    return visibility;
   }
-  public void setPagination(Object pagination) {
-    this.pagination = pagination;
+  public void setVisibility(String visibility) {
+    this.visibility = visibility;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public List<String> getPermissions() {
+    return permissions;
+  }
+  public void setPermissions(List<String> permissions) {
+    this.permissions = permissions;
   }
 
 
@@ -53,26 +68,29 @@ public class PaginatedRegistrationsList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedRegistrationsList paginatedRegistrationsList = (PaginatedRegistrationsList) o;
-    return (this.registrations == null ? paginatedRegistrationsList.registrations == null : this.registrations.equals(paginatedRegistrationsList.registrations)) &&
-        (this.pagination == null ? paginatedRegistrationsList.pagination == null : this.pagination.equals(paginatedRegistrationsList.pagination));
+    Permission permission = (Permission) o;
+    return (this.name == null ? permission.name == null : this.name.equals(permission.name)) &&
+        (this.visibility == null ? permission.visibility == null : this.visibility.equals(permission.visibility)) &&
+        (this.permissions == null ? permission.permissions == null : this.permissions.equals(permission.permissions));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.registrations == null ? 0: this.registrations.hashCode());
-    result = 31 * result + (this.pagination == null ? 0: this.pagination.hashCode());
+    result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.visibility == null ? 0: this.visibility.hashCode());
+    result = 31 * result + (this.permissions == null ? 0: this.permissions.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedRegistrationsList {\n");
+    sb.append("class Permission {\n");
     
-    sb.append("  registrations: ").append(registrations).append("\n");
-    sb.append("  pagination: ").append(pagination).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  visibility: ").append(visibility).append("\n");
+    sb.append("  permissions: ").append(permissions).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

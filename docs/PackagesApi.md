@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createPackage
 
-> ModelPackage createPackage(packageCreateParams)
+> ModelPackage createPackage(packageCreateParamsV1)
 
 Create package
 
@@ -27,9 +27,9 @@ Creates a [Package] entity by extracting information about the recipient and car
 //import GuestSDK.PackagesApi;
 
 PackagesApi apiInstance = new PackagesApi();
-PackageCreateParams packageCreateParams = new PackageCreateParams(); // PackageCreateParams | Parameters for creating a package
+PackageCreateParamsV1 packageCreateParamsV1 = new PackageCreateParamsV1(); // PackageCreateParamsV1 | 
 try {
-    ModelPackage result = apiInstance.createPackage(packageCreateParams);
+    ModelPackage result = apiInstance.createPackage(packageCreateParamsV1);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PackagesApi#createPackage");
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **packageCreateParams** | [**PackageCreateParams**](PackageCreateParams.md)| Parameters for creating a package | [optional]
+ **packageCreateParamsV1** | [**PackageCreateParamsV1**](PackageCreateParamsV1.md)|  | [optional]
 
 ### Return type
 
@@ -107,7 +107,7 @@ null (empty response body)
 
 ## getPackage
 
-> ModelPackage getPackage(packageId, include)
+> Object getPackage(packageId, include)
 
 Get Package
 
@@ -123,7 +123,7 @@ PackagesApi apiInstance = new PackagesApi();
 String packageId = null; // String | 
 String include = null; // String | A list of comma-separated related models to include 
 try {
-    ModelPackage result = apiInstance.getPackage(packageId, include);
+    Object result = apiInstance.getPackage(packageId, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PackagesApi#getPackage");
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPackage**](ModelPackage.md)
+**Object**
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## updatePackage
 
-> ModelPackage updatePackage(packageId, idempotencyKey, packageUpdateParams)
+> Object updatePackage(packageId, idempotencyKey, packageUpdateParamsV1)
 
 Update Package
 
@@ -226,9 +226,9 @@ Update/Edit information about a Package.  picked_up - changes the package_state 
 PackagesApi apiInstance = new PackagesApi();
 String packageId = null; // String | 
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-PackageUpdateParams packageUpdateParams = new PackageUpdateParams(); // PackageUpdateParams | 
+PackageUpdateParamsV1 packageUpdateParamsV1 = new PackageUpdateParamsV1(); // PackageUpdateParamsV1 | 
 try {
-    ModelPackage result = apiInstance.updatePackage(packageId, idempotencyKey, packageUpdateParams);
+    Object result = apiInstance.updatePackage(packageId, idempotencyKey, packageUpdateParamsV1);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PackagesApi#updatePackage");
@@ -243,11 +243,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **packageId** | **String**|  | [default to null]
  **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
- **packageUpdateParams** | [**PackageUpdateParams**](PackageUpdateParams.md)|  | [optional]
+ **packageUpdateParamsV1** | [**PackageUpdateParamsV1**](PackageUpdateParamsV1.md)|  | [optional]
 
 ### Return type
 
-[**ModelPackage**](ModelPackage.md)
+**Object**
 
 ### Authorization
 

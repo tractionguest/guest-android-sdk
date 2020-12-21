@@ -15,9 +15,6 @@ package org.openapitools.client.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
 public class InternalWatchlistResult {
   
@@ -33,7 +30,6 @@ public class InternalWatchlistResult {
   private String firstName = null;
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public Integer getId() {
@@ -44,7 +40,6 @@ public class InternalWatchlistResult {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEmail() {
@@ -55,7 +50,6 @@ public class InternalWatchlistResult {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(required = true, value = "")
   public String getColour() {
@@ -66,7 +60,6 @@ public class InternalWatchlistResult {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getLastName() {
@@ -77,7 +70,6 @@ public class InternalWatchlistResult {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getFirstName() {

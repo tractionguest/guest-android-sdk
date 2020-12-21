@@ -27,7 +27,7 @@ Create a new &#x60;Watchlist&#x60; record. Please note, every action taken again
 //import GuestSDK.WatchlistsApi;
 
 WatchlistsApi apiInstance = new WatchlistsApi();
-WatchlistCreateParams watchlistCreateParams = {"colour":"GREEN","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]}; // WatchlistCreateParams | The new `Watchlist` to create
+WatchlistCreateParams watchlistCreateParams = new WatchlistCreateParams(); // WatchlistCreateParams | 
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
     Watchlist result = apiInstance.createWatchlist(watchlistCreateParams, idempotencyKey);
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watchlistCreateParams** | [**WatchlistCreateParams**](WatchlistCreateParams.md)| The new &#x60;Watchlist&#x60; to create |
+ **watchlistCreateParams** | [**WatchlistCreateParams**](WatchlistCreateParams.md)|  |
  **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
 
 ### Return type
@@ -109,7 +109,7 @@ null (empty response body)
 
 ## getWatchlist
 
-> Watchlist getWatchlist(watchlistId, include)
+> Object getWatchlist(watchlistId, include)
 
 Get a Watchlist
 
@@ -125,7 +125,7 @@ WatchlistsApi apiInstance = new WatchlistsApi();
 String watchlistId = null; // String | 
 String include = null; // String | A list of comma-separated related models to include
 try {
-    Watchlist result = apiInstance.getWatchlist(watchlistId, include);
+    Object result = apiInstance.getWatchlist(watchlistId, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WatchlistsApi#getWatchlist");
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Watchlist**](Watchlist.md)
+**Object**
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## updateWatchlist
 
-> Watchlist updateWatchlist(watchlistId, watchlistCreateParams, idempotencyKey)
+> Object updateWatchlist(watchlistId, body, idempotencyKey)
 
 Update a Watchlist
 
@@ -225,10 +225,10 @@ Update an existing &#x60;Watchlist&#x60; record. Every operation against this en
 
 WatchlistsApi apiInstance = new WatchlistsApi();
 String watchlistId = null; // String | 
-WatchlistCreateParams watchlistCreateParams = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]}; // WatchlistCreateParams | The watchlist record attributes to update
+Object body = {"colour":"YELLOW","email":"some text","first_name":"some text","last_name":"some text","notes":"some text","aliases":["some text","some text"]}; // Object | The watchlist record attributes to update
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
 try {
-    Watchlist result = apiInstance.updateWatchlist(watchlistId, watchlistCreateParams, idempotencyKey);
+    Object result = apiInstance.updateWatchlist(watchlistId, body, idempotencyKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WatchlistsApi#updateWatchlist");
@@ -242,12 +242,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **watchlistId** | **String**|  | [default to null]
- **watchlistCreateParams** | [**WatchlistCreateParams**](WatchlistCreateParams.md)| The watchlist record attributes to update |
+ **body** | **Object**| The watchlist record attributes to update |
  **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
 
 ### Return type
 
-[**Watchlist**](Watchlist.md)
+**Object**
 
 ### Authorization
 

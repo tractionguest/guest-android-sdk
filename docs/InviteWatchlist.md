@@ -7,8 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
-**internal** | [**List&lt;InternalWatchlistResult&gt;**](InternalWatchlistResult.md) |  |  [optional]
-**external** | [**List&lt;ExternalWatchlistResult&gt;**](ExternalWatchlistResult.md) |  |  [optional]
+**internal** | **List&lt;Object&gt;** |  |  [optional]
+**external** | **List&lt;Object&gt;** |  |  [optional]
 **internalColours** | **List&lt;String&gt;** | Deprecated |  [optional]
 **externalColours** | **List&lt;String&gt;** | Deprecated |  [optional]
 

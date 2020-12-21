@@ -25,7 +25,6 @@ import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.Capacity;
 import org.openapitools.client.model.CapacityForecast;
-import org.openapitools.client.model.ErrorsList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;

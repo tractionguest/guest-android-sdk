@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**locations** | [**List&lt;Location&gt;**](Location.md) |  | 
-**pagination** | [**Pagination**](Pagination.md) |  | 
+**locations** | **List&lt;Object&gt;** |  | 
+**pagination** | **Object** |  | 
 
 
 

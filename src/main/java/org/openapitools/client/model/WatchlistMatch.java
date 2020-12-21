@@ -16,9 +16,6 @@ import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
 public class WatchlistMatch {
   
@@ -214,7 +211,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getType() {
@@ -225,7 +221,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getCategory() {
@@ -236,7 +231,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getStreet1() {
@@ -247,7 +241,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getStreet2() {
@@ -258,7 +251,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getCity() {
@@ -269,7 +261,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getState() {
@@ -280,7 +271,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getCountry() {
@@ -291,7 +281,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getNotes() {
@@ -302,7 +291,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getFrc() {
@@ -313,7 +301,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getStart() {
@@ -324,7 +311,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEnd() {
@@ -335,7 +321,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getFrserve() {
@@ -346,7 +331,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getOptionalID() {
@@ -357,7 +341,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getAlertType() {
@@ -368,7 +351,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairStatus() {
@@ -379,7 +361,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairReason() {
@@ -390,7 +371,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairComments() {
@@ -401,7 +381,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getApplicationDisplayName() {
@@ -412,7 +391,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getApplicationId() {
@@ -423,7 +401,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getClientId() {
@@ -434,7 +411,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getClientKey() {
@@ -445,7 +421,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getClientFullName() {
@@ -456,7 +431,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListKey() {
@@ -467,7 +441,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListName() {
@@ -478,7 +451,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListId() {
@@ -489,7 +461,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListVersion() {
@@ -500,7 +471,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListModifyDate() {
@@ -511,7 +481,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListProfileId() {
@@ -522,7 +491,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListProfileKey() {
@@ -533,7 +501,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getLinkSingleStringName() {
@@ -544,7 +511,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListParentSingleStringName() {
@@ -555,7 +521,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListCategory() {
@@ -566,7 +531,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListPepCategory() {
@@ -577,7 +541,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListDoBs() {
@@ -588,7 +551,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getListCountries() {
@@ -599,7 +561,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getRankString() {
@@ -610,7 +571,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getRanktype() {
@@ -621,7 +581,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getRankweight() {
@@ -632,7 +591,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairLoadDate() {
@@ -643,7 +601,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEAddressTo() {
@@ -654,7 +611,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEAddressCc() {
@@ -665,7 +621,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getOrigin() {
@@ -676,7 +631,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getSecondsviewed() {
@@ -687,7 +641,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getInitialUser() {
@@ -698,7 +651,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getIsPairParentFlag() {
@@ -709,7 +661,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairMetSearchCriteriaFlag() {
@@ -720,7 +671,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getEditableDueToAssignmentFlag() {
@@ -731,7 +681,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getModifyDate() {
@@ -742,7 +691,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getModifiedByUser() {
@@ -753,7 +701,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getPairReportType() {
@@ -764,7 +711,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getFinscanCategory() {
@@ -775,7 +721,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getWrapperStatus() {
@@ -786,7 +731,6 @@ public class WatchlistMatch {
   }
 
   /**
-   * 
    **/
   @ApiModelProperty(value = "")
   public String getSourceLists() {
