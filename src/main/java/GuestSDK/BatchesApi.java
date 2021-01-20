@@ -23,9 +23,9 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.Capacity;
-import org.openapitools.client.model.CapacityForecast;
+import org.openapitools.client.model.BatchJob;
 import org.openapitools.client.model.ErrorsList;
+import org.openapitools.client.model.IdentifierList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class CapacitiesApi {
+public class BatchesApi {
   String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -58,21 +58,16 @@ public class CapacitiesApi {
   }
 
   /**
-  * Get the current capacity details for a location
-  * Get details of current capacity in a location
-   * @param locationId 
-   * @return Capacity
+  * Delete Multiple Invites
+  * Queues up a \&quot;delete\&quot; background task for one or more &#x60;Invite&#x60; entities.
+   * @param identifierList 
+   * @return BatchJob
   */
-  public Capacity getCapacity (String locationId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = null;
-    // verify the required parameter 'locationId' is set
-    if (locationId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'locationId' when calling getCapacity",
-        new ApiException(400, "Missing the required parameter 'locationId' when calling getCapacity"));
-    }
+  public BatchJob batchDeleteInvites (IdentifierList identifierList) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = identifierList;
 
     // create path and map variables
-    String path = "/locations/{location_id}/capacities".replaceAll("\\{" + "location_id" + "\\}", apiInvoker.escapeString(locationId.toString()));
+    String path = "/invites/batch_delete";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -81,6 +76,7 @@ public class CapacitiesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     String[] contentTypes = {
+      "application/json"
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -96,9 +92,9 @@ public class CapacitiesApi {
     String[] authNames = new String[] { "TractionGuestAuth" };
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Capacity) ApiInvoker.deserialize(localVarResponse, "", Capacity.class);
+         return (BatchJob) ApiInvoker.deserialize(localVarResponse, "", BatchJob.class);
       } else {
          return null;
       }
@@ -120,21 +116,16 @@ public class CapacitiesApi {
   }
 
       /**
-   * Get the current capacity details for a location
-   * Get details of current capacity in a location
-   * @param locationId 
+   * Delete Multiple Invites
+   * Queues up a \&quot;delete\&quot; background task for one or more &#x60;Invite&#x60; entities.
+   * @param identifierList 
   */
-  public void getCapacity (String locationId, final Response.Listener<Capacity> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = null;
+  public void batchDeleteInvites (IdentifierList identifierList, final Response.Listener<BatchJob> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = identifierList;
 
-    // verify the required parameter 'locationId' is set
-    if (locationId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'locationId' when calling getCapacity",
-        new ApiException(400, "Missing the required parameter 'locationId' when calling getCapacity"));
-    }
 
     // create path and map variables
-    String path = "/locations/{location_id}/capacities".replaceAll("\\{format\\}","json").replaceAll("\\{" + "location_id" + "\\}", apiInvoker.escapeString(locationId.toString()));
+    String path = "/invites/batch_delete".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -146,7 +137,7 @@ public class CapacitiesApi {
 
 
     String[] contentTypes = {
-      
+      "application/json"
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -164,12 +155,12 @@ public class CapacitiesApi {
     String[] authNames = new String[] { "TractionGuestAuth" };
 
     try {
-      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Capacity) ApiInvoker.deserialize(localVarResponse,  "", Capacity.class));
+              responseListener.onResponse((BatchJob) ApiInvoker.deserialize(localVarResponse,  "", BatchJob.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -185,23 +176,21 @@ public class CapacitiesApi {
     }
   }
   /**
-  * Get the capacity details for a location
-  * Gets the details of the future capacity in a location.
-   * @param locationId 
-   * @param hoursToForecast The next N number of hours, the data needs to be calculated. Range from 1 to 24. If not set, it defaults to 8.
-   * @param timestamp ISO8601 timestamp(includes the offset value) to use as the start point for the capacity estimate report. Defaults to the current local timestamp of the location if not provided. Eg: \&quot;2020-07-16T17:05:08-07:00\&quot;
-   * @return CapacityForecast
+  * Get a BatchJob
+  * Retrieve a given &#x60;BatchJob&#x60; entity.
+   * @param batchId 
+   * @return BatchJob
   */
-  public CapacityForecast getCapacityForecast (String locationId, Integer hoursToForecast, String timestamp) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public BatchJob getBatch (String batchId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
-    // verify the required parameter 'locationId' is set
-    if (locationId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'locationId' when calling getCapacityForecast",
-        new ApiException(400, "Missing the required parameter 'locationId' when calling getCapacityForecast"));
+    // verify the required parameter 'batchId' is set
+    if (batchId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'batchId' when calling getBatch",
+        new ApiException(400, "Missing the required parameter 'batchId' when calling getBatch"));
     }
 
     // create path and map variables
-    String path = "/locations/{location_id}/capacity_forecasts".replaceAll("\\{" + "location_id" + "\\}", apiInvoker.escapeString(locationId.toString()));
+    String path = "/batches/{batch_id}".replaceAll("\\{" + "batch_id" + "\\}", apiInvoker.escapeString(batchId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -209,8 +198,6 @@ public class CapacitiesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "hours_to_forecast", hoursToForecast));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "timestamp", timestamp));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -229,7 +216,7 @@ public class CapacitiesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (CapacityForecast) ApiInvoker.deserialize(localVarResponse, "", CapacityForecast.class);
+         return (BatchJob) ApiInvoker.deserialize(localVarResponse, "", BatchJob.class);
       } else {
          return null;
       }
@@ -251,21 +238,21 @@ public class CapacitiesApi {
   }
 
       /**
-   * Get the capacity details for a location
-   * Gets the details of the future capacity in a location.
-   * @param locationId    * @param hoursToForecast The next N number of hours, the data needs to be calculated. Range from 1 to 24. If not set, it defaults to 8.   * @param timestamp ISO8601 timestamp(includes the offset value) to use as the start point for the capacity estimate report. Defaults to the current local timestamp of the location if not provided. Eg: \&quot;2020-07-16T17:05:08-07:00\&quot;
+   * Get a BatchJob
+   * Retrieve a given &#x60;BatchJob&#x60; entity.
+   * @param batchId 
   */
-  public void getCapacityForecast (String locationId, Integer hoursToForecast, String timestamp, final Response.Listener<CapacityForecast> responseListener, final Response.ErrorListener errorListener) {
+  public void getBatch (String batchId, final Response.Listener<BatchJob> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-    // verify the required parameter 'locationId' is set
-    if (locationId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'locationId' when calling getCapacityForecast",
-        new ApiException(400, "Missing the required parameter 'locationId' when calling getCapacityForecast"));
+    // verify the required parameter 'batchId' is set
+    if (batchId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'batchId' when calling getBatch",
+        new ApiException(400, "Missing the required parameter 'batchId' when calling getBatch"));
     }
 
     // create path and map variables
-    String path = "/locations/{location_id}/capacity_forecasts".replaceAll("\\{format\\}","json").replaceAll("\\{" + "location_id" + "\\}", apiInvoker.escapeString(locationId.toString()));
+    String path = "/batches/{batch_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "batch_id" + "\\}", apiInvoker.escapeString(batchId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -274,8 +261,6 @@ public class CapacitiesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "hours_to_forecast", hoursToForecast));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "timestamp", timestamp));
 
 
     String[] contentTypes = {
@@ -302,7 +287,7 @@ public class CapacitiesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((CapacityForecast) ApiInvoker.deserialize(localVarResponse,  "", CapacityForecast.class));
+              responseListener.onResponse((BatchJob) ApiInvoker.deserialize(localVarResponse,  "", BatchJob.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

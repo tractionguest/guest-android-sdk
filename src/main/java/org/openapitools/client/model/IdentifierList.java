@@ -13,40 +13,23 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.Docusign;
-import org.openapitools.client.model.SimpleSignature;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * 
- **/
 @ApiModel(description = "")
-public class SignableDocument {
+public class IdentifierList {
   
-  @SerializedName("simple_signatures")
-  private List<SimpleSignature> simpleSignatures = null;
-  @SerializedName("docusigns")
-  private List<Docusign> docusigns = null;
+  @SerializedName("ids")
+  private List<String> ids = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<SimpleSignature> getSimpleSignatures() {
-    return simpleSignatures;
+  public List<String> getIds() {
+    return ids;
   }
-  public void setSimpleSignatures(List<SimpleSignature> simpleSignatures) {
-    this.simpleSignatures = simpleSignatures;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public List<Docusign> getDocusigns() {
-    return docusigns;
-  }
-  public void setDocusigns(List<Docusign> docusigns) {
-    this.docusigns = docusigns;
+  public void setIds(List<String> ids) {
+    this.ids = ids;
   }
 
 
@@ -58,26 +41,23 @@ public class SignableDocument {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SignableDocument signableDocument = (SignableDocument) o;
-    return (this.simpleSignatures == null ? signableDocument.simpleSignatures == null : this.simpleSignatures.equals(signableDocument.simpleSignatures)) &&
-        (this.docusigns == null ? signableDocument.docusigns == null : this.docusigns.equals(signableDocument.docusigns));
+    IdentifierList identifierList = (IdentifierList) o;
+    return (this.ids == null ? identifierList.ids == null : this.ids.equals(identifierList.ids));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.simpleSignatures == null ? 0: this.simpleSignatures.hashCode());
-    result = 31 * result + (this.docusigns == null ? 0: this.docusigns.hashCode());
+    result = 31 * result + (this.ids == null ? 0: this.ids.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SignableDocument {\n");
+    sb.append("class IdentifierList {\n");
     
-    sb.append("  simpleSignatures: ").append(simpleSignatures).append("\n");
-    sb.append("  docusigns: ").append(docusigns).append("\n");
+    sb.append("  ids: ").append(ids).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

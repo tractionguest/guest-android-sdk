@@ -4,6 +4,7 @@ All URIs are relative to *https://us.tractionguest.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**batchDeleteInvites**](InvitesApi.md#batchDeleteInvites) | **POST** /invites/batch_delete | Delete Multiple Invites
 [**createLocationInvite**](InvitesApi.md#createLocationInvite) | **POST** /locations/{location_id}/invites | Create an Invite
 [**createRegistrationInvite**](InvitesApi.md#createRegistrationInvite) | **POST** /registrations/{registration_id}/invites | Create an Invite from a Registration
 [**deleteInvite**](InvitesApi.md#deleteInvite) | **DELETE** /invites/{invite_id} | Deletes an Invite
@@ -11,6 +12,52 @@ Method | HTTP request | Description
 [**getInvites**](InvitesApi.md#getInvites) | **GET** /invites | List all Invites
 [**updateInvite**](InvitesApi.md#updateInvite) | **PUT** /invites/{invite_id} | Update an Invite
 
+
+
+## batchDeleteInvites
+
+> BatchJob batchDeleteInvites(identifierList)
+
+Delete Multiple Invites
+
+Queues up a \&quot;delete\&quot; background task for one or more &#x60;Invite&#x60; entities.
+
+### Example
+
+```java
+// Import classes:
+//import GuestSDK.InvitesApi;
+
+InvitesApi apiInstance = new InvitesApi();
+IdentifierList identifierList = new IdentifierList(); // IdentifierList | 
+try {
+    BatchJob result = apiInstance.batchDeleteInvites(identifierList);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InvitesApi#batchDeleteInvites");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifierList** | [**IdentifierList**](IdentifierList.md)|  | [optional]
+
+### Return type
+
+[**BatchJob**](BatchJob.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## createLocationInvite
