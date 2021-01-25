@@ -1,6 +1,6 @@
 # RegistrationsApi
 
-All URIs are relative to *https://us.tractionguest.com/api/v3*
+All URIs are relative to *https://tractionguest.ca/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## getRegistrations
 
-> PaginatedRegistrationsList getRegistrations(limit, offset, locationIds, createdBefore, createdAfter)
+> PaginatedRegistrationsList getRegistrations(limit, offset, locationIds, createdBefore, createdAfter, needsConfirmation)
 
 List all Registrations
 
@@ -77,8 +77,9 @@ Integer offset = null; // Integer | Offsets the results to a specified number, d
 String locationIds = null; // String | A comma separated list of Location IDs
 String createdBefore = null; // String | Restricts results to only those that were created before the provided date
 String createdAfter = null; // String | Restricts results to only those that were created after the provided date
+Boolean needsConfirmation = null; // Boolean | A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false.
 try {
-    PaginatedRegistrationsList result = apiInstance.getRegistrations(limit, offset, locationIds, createdBefore, createdAfter);
+    PaginatedRegistrationsList result = apiInstance.getRegistrations(limit, offset, locationIds, createdBefore, createdAfter, needsConfirmation);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RegistrationsApi#getRegistrations");
@@ -96,6 +97,7 @@ Name | Type | Description  | Notes
  **locationIds** | **String**| A comma separated list of Location IDs | [optional] [default to null]
  **createdBefore** | **String**| Restricts results to only those that were created before the provided date | [optional] [default to null]
  **createdAfter** | **String**| Restricts results to only those that were created after the provided date | [optional] [default to null]
+ **needsConfirmation** | **Boolean**| A confirmed &#x60;Registration&#x60; is one with an associated &#x60;Invite&#x60;. This filter returns those without an &#x60;Invite&#x60; when true, and those with an &#x60;Invite&#x60; when false. | [optional] [default to null]
 
 ### Return type
 

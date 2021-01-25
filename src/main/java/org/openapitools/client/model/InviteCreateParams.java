@@ -54,8 +54,6 @@ public class InviteCreateParams {
   private String email = null;
   @SerializedName("company")
   private String company = null;
-  @SerializedName("group_visit_id")
-  private String groupVisitId = null;
 
   /**
    **/
@@ -188,16 +186,6 @@ public class InviteCreateParams {
     this.company = company;
   }
 
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getGroupVisitId() {
-    return groupVisitId;
-  }
-  public void setGroupVisitId(String groupVisitId) {
-    this.groupVisitId = groupVisitId;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -220,8 +208,7 @@ public class InviteCreateParams {
         (this.lastName == null ? inviteCreateParams.lastName == null : this.lastName.equals(inviteCreateParams.lastName)) &&
         (this.endDate == null ? inviteCreateParams.endDate == null : this.endDate.equals(inviteCreateParams.endDate)) &&
         (this.email == null ? inviteCreateParams.email == null : this.email.equals(inviteCreateParams.email)) &&
-        (this.company == null ? inviteCreateParams.company == null : this.company.equals(inviteCreateParams.company)) &&
-        (this.groupVisitId == null ? inviteCreateParams.groupVisitId == null : this.groupVisitId.equals(inviteCreateParams.groupVisitId));
+        (this.company == null ? inviteCreateParams.company == null : this.company.equals(inviteCreateParams.company));
   }
 
   @Override
@@ -240,7 +227,6 @@ public class InviteCreateParams {
     result = 31 * result + (this.endDate == null ? 0: this.endDate.hashCode());
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.company == null ? 0: this.company.hashCode());
-    result = 31 * result + (this.groupVisitId == null ? 0: this.groupVisitId.hashCode());
     return result;
   }
 
@@ -262,7 +248,6 @@ public class InviteCreateParams {
     sb.append("  endDate: ").append(endDate).append("\n");
     sb.append("  email: ").append(email).append("\n");
     sb.append("  company: ").append(company).append("\n");
-    sb.append("  groupVisitId: ").append(groupVisitId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

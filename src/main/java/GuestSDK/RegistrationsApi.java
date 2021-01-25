@@ -38,7 +38,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class RegistrationsApi {
-  String basePath = "https://us.tractionguest.com/api/v3";
+  String basePath = "https://tractionguest.ca/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -195,9 +195,10 @@ public class RegistrationsApi {
    * @param locationIds A comma separated list of Location IDs
    * @param createdBefore Restricts results to only those that were created before the provided date
    * @param createdAfter Restricts results to only those that were created after the provided date
+   * @param needsConfirmation A confirmed &#x60;Registration&#x60; is one with an associated &#x60;Invite&#x60;. This filter returns those without an &#x60;Invite&#x60; when true, and those with an &#x60;Invite&#x60; when false.
    * @return PaginatedRegistrationsList
   */
-  public PaginatedRegistrationsList getRegistrations (Integer limit, Integer offset, String locationIds, String createdBefore, String createdAfter) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PaginatedRegistrationsList getRegistrations (Integer limit, Integer offset, String locationIds, String createdBefore, String createdAfter, Boolean needsConfirmation) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -214,6 +215,7 @@ public class RegistrationsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "location_ids", locationIds));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "created_before", createdBefore));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "created_after", createdAfter));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "needs_confirmation", needsConfirmation));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -256,9 +258,9 @@ public class RegistrationsApi {
       /**
    * List all Registrations
    * Gets a list of all &#x60;Registration&#x60; entities.
-   * @param limit Limits the results to a specified number, defaults to 50   * @param offset Offsets the results to a specified number, defaults to 0   * @param locationIds A comma separated list of Location IDs   * @param createdBefore Restricts results to only those that were created before the provided date   * @param createdAfter Restricts results to only those that were created after the provided date
+   * @param limit Limits the results to a specified number, defaults to 50   * @param offset Offsets the results to a specified number, defaults to 0   * @param locationIds A comma separated list of Location IDs   * @param createdBefore Restricts results to only those that were created before the provided date   * @param createdAfter Restricts results to only those that were created after the provided date   * @param needsConfirmation A confirmed &#x60;Registration&#x60; is one with an associated &#x60;Invite&#x60;. This filter returns those without an &#x60;Invite&#x60; when true, and those with an &#x60;Invite&#x60; when false.
   */
-  public void getRegistrations (Integer limit, Integer offset, String locationIds, String createdBefore, String createdAfter, final Response.Listener<PaginatedRegistrationsList> responseListener, final Response.ErrorListener errorListener) {
+  public void getRegistrations (Integer limit, Integer offset, String locationIds, String createdBefore, String createdAfter, Boolean needsConfirmation, final Response.Listener<PaginatedRegistrationsList> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -277,6 +279,7 @@ public class RegistrationsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "location_ids", locationIds));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "created_before", createdBefore));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "created_after", createdAfter));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "needs_confirmation", needsConfirmation));
 
 
     String[] contentTypes = {
