@@ -90,6 +90,11 @@ Class | Method | HTTP request | Description
 *CapacitiesApi* | [**getCapacity**](docs/CapacitiesApi.md#getCapacity) | **GET** /locations/{location_id}/capacities | Get the current capacity details for a location
 *CapacitiesApi* | [**getCapacityForecast**](docs/CapacitiesApi.md#getCapacityForecast) | **GET** /locations/{location_id}/capacity_forecasts | Get the capacity details for a location
 *EmailTemplatesApi* | [**getEmailTemplates**](docs/EmailTemplatesApi.md#getEmailTemplates) | **GET** /email_templates | List all EmailTemplates
+*GroupVisitsApi* | [**createGroupVisit**](docs/GroupVisitsApi.md#createGroupVisit) | **POST** /group_visits | Create a new Group Visit (Appointment)
+*GroupVisitsApi* | [**deleteGroupVisit**](docs/GroupVisitsApi.md#deleteGroupVisit) | **DELETE** /group_visits/{group_visit_id} | Delete a Group Visit (Appointment)
+*GroupVisitsApi* | [**getGroupVisit**](docs/GroupVisitsApi.md#getGroupVisit) | **GET** /group_visits/{group_visit_id} | Get a Group Visit (Appointment)
+*GroupVisitsApi* | [**getGroupVisits**](docs/GroupVisitsApi.md#getGroupVisits) | **GET** /group_visits | List all Group Visits (Appointments)
+*GroupVisitsApi* | [**updateGroupVisit**](docs/GroupVisitsApi.md#updateGroupVisit) | **PUT** /group_visits/{group_visit_id} | Update a Group Visit (Appointment)
 *HostsApi* | [**createHost**](docs/HostsApi.md#createHost) | **POST** /hosts | Create a Host
 *HostsApi* | [**createHosts**](docs/HostsApi.md#createHosts) | **POST** /hosts/batch | Create multiple Hosts
 *HostsApi* | [**getHosts**](docs/HostsApi.md#getHosts) | **GET** /hosts | List all Hosts
@@ -136,6 +141,8 @@ Class | Method | HTTP request | Description
  - [ErrorsList](docs/ErrorsList.md)
  - [ExternalWatchlistResult](docs/ExternalWatchlistResult.md)
  - [GroupVisit](docs/GroupVisit.md)
+ - [GroupVisitCreateParams](docs/GroupVisitCreateParams.md)
+ - [GroupVisitUpdateParams](docs/GroupVisitUpdateParams.md)
  - [GuestResponse](docs/GuestResponse.md)
  - [Host](docs/Host.md)
  - [HostBatchCreateParams](docs/HostBatchCreateParams.md)

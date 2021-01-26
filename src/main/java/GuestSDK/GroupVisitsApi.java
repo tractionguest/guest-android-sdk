@@ -24,9 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.ErrorsList;
-import org.openapitools.client.model.PaginatedWatchlistList;
-import org.openapitools.client.model.Watchlist;
-import org.openapitools.client.model.WatchlistCreateParams;
+import org.openapitools.client.model.GroupVisit;
+import org.openapitools.client.model.GroupVisitCreateParams;
+import org.openapitools.client.model.GroupVisitUpdateParams;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class WatchlistsApi {
+public class GroupVisitsApi {
   String basePath = "https://us.tractionguest.com/api/v3";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -59,22 +59,17 @@ public class WatchlistsApi {
   }
 
   /**
-  * Create Watchlist
-  * Create a new &#x60;Watchlist&#x60; record. Please note, every action taken against this endpoint is recorded in the audit log.
-   * @param watchlistCreateParams The new &#x60;Watchlist&#x60; to create
+  * Create a new Group Visit (Appointment)
+  * Creates a &#x60;GroupVisit&#x60; (Appointment)
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Watchlist
+   * @param groupVisitCreateParams 
+   * @return GroupVisit
   */
-  public Watchlist createWatchlist (WatchlistCreateParams watchlistCreateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = watchlistCreateParams;
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling createWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling createWatchlist"));
-    }
+  public GroupVisit createGroupVisit (String idempotencyKey, GroupVisitCreateParams groupVisitCreateParams) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = groupVisitCreateParams;
 
     // create path and map variables
-    String path = "/watchlists";
+    String path = "/group_visits";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -102,7 +97,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Watchlist) ApiInvoker.deserialize(localVarResponse, "", Watchlist.class);
+         return (GroupVisit) ApiInvoker.deserialize(localVarResponse, "", GroupVisit.class);
       } else {
          return null;
       }
@@ -124,21 +119,16 @@ public class WatchlistsApi {
   }
 
       /**
-   * Create Watchlist
-   * Create a new &#x60;Watchlist&#x60; record. Please note, every action taken against this endpoint is recorded in the audit log.
-   * @param watchlistCreateParams The new &#x60;Watchlist&#x60; to create   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * Create a new Group Visit (Appointment)
+   * Creates a &#x60;GroupVisit&#x60; (Appointment)
+   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored   * @param groupVisitCreateParams 
   */
-  public void createWatchlist (WatchlistCreateParams watchlistCreateParams, String idempotencyKey, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = watchlistCreateParams;
+  public void createGroupVisit (String idempotencyKey, GroupVisitCreateParams groupVisitCreateParams, final Response.Listener<GroupVisit> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = groupVisitCreateParams;
 
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling createWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling createWatchlist"));
-    }
 
     // create path and map variables
-    String path = "/watchlists".replaceAll("\\{format\\}","json");
+    String path = "/group_visits".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -174,7 +164,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Watchlist) ApiInvoker.deserialize(localVarResponse,  "", Watchlist.class));
+              responseListener.onResponse((GroupVisit) ApiInvoker.deserialize(localVarResponse,  "", GroupVisit.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -190,22 +180,22 @@ public class WatchlistsApi {
     }
   }
   /**
-  * Deletes a Watchlist
-  * Deletes a single instance of &#x60;Watchlist&#x60;
-   * @param watchlistId 
+  * Delete a Group Visit (Appointment)
+  * Deletes a single instance of &#x60;GroupVisit&#x60; (Appointment).
+   * @param groupVisitId 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
    * @return void
   */
-  public void deleteWatchlist (String watchlistId, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void deleteGroupVisit (String groupVisitId, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling deleteWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling deleteWatchlist"));
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling deleteGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling deleteGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -254,21 +244,21 @@ public class WatchlistsApi {
   }
 
       /**
-   * Deletes a Watchlist
-   * Deletes a single instance of &#x60;Watchlist&#x60;
-   * @param watchlistId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * Delete a Group Visit (Appointment)
+   * Deletes a single instance of &#x60;GroupVisit&#x60; (Appointment).
+   * @param groupVisitId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
   */
-  public void deleteWatchlist (String watchlistId, String idempotencyKey, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void deleteGroupVisit (String groupVisitId, String idempotencyKey, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling deleteWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling deleteWatchlist"));
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling deleteGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling deleteGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -316,22 +306,21 @@ public class WatchlistsApi {
     }
   }
   /**
-  * Get a Watchlist
-  * Gets the details of a single instance of a &#x60;Watchlist&#x60;.
-   * @param watchlistId 
-   * @param include A list of comma-separated related models to include
-   * @return Watchlist
+  * Get a Group Visit (Appointment)
+  * Gets the details of a single instance of a &#x60;GroupVisit&#x60;.
+   * @param groupVisitId 
+   * @return GroupVisit
   */
-  public Watchlist getWatchlist (String watchlistId, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public GroupVisit getGroupVisit (String groupVisitId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling getWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling getWatchlist"));
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling getGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling getGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -339,7 +328,6 @@ public class WatchlistsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include", include));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -358,7 +346,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Watchlist) ApiInvoker.deserialize(localVarResponse, "", Watchlist.class);
+         return (GroupVisit) ApiInvoker.deserialize(localVarResponse, "", GroupVisit.class);
       } else {
          return null;
       }
@@ -380,21 +368,21 @@ public class WatchlistsApi {
   }
 
       /**
-   * Get a Watchlist
-   * Gets the details of a single instance of a &#x60;Watchlist&#x60;.
-   * @param watchlistId    * @param include A list of comma-separated related models to include
+   * Get a Group Visit (Appointment)
+   * Gets the details of a single instance of a &#x60;GroupVisit&#x60;.
+   * @param groupVisitId 
   */
-  public void getWatchlist (String watchlistId, String include, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
+  public void getGroupVisit (String groupVisitId, final Response.Listener<GroupVisit> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling getWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling getWatchlist"));
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling getGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling getGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -403,7 +391,6 @@ public class WatchlistsApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include", include));
 
 
     String[] contentTypes = {
@@ -430,7 +417,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Watchlist) ApiInvoker.deserialize(localVarResponse,  "", Watchlist.class));
+              responseListener.onResponse((GroupVisit) ApiInvoker.deserialize(localVarResponse,  "", GroupVisit.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -446,20 +433,19 @@ public class WatchlistsApi {
     }
   }
   /**
-  * List all Watchlists
-  * Gets a list of all &#x60;Watchlist&#x60; entities.
-   * @param limit Limits the results to a specified number, defaults to 50
-   * @param offset Offsets the results to a specified number, defaults to 0
-   * @param query Query the results by &#x60;first_name&#x60;, &#x60;last_name&#x60;, &#x60;email&#x60;, &#x60;colour&#x60;, and &#x60;notes&#x60; all at once.
-   * @param withColours A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, and &#x60;orange&#x60;
-   * @param include A list of comma-separated related models to include
-   * @return PaginatedWatchlistList
+  * List all Group Visits (Appointments)
+  * Gets a list of all &#x60;GroupVisit&#x60; entities (Appointments).
+   * @param limit Limits the results to a specified number. Defaults to 50.
+   * @param offset Offsets the results to a specified number. Defaults to 0.
+   * @param locationIds A comma-separated string of locations IDs, to only show group visits (appointments) from those locations.
+   * @param sortWith A combination of attribute and direction, joined with an underscore, for sorting. Valid attributes are: &#x60;created_at&#x60;, &#x60;updated_at&#x60;, &#x60;name&#x60;, and &#x60;start_time&#x60;. Valid directions are &#x60;asc&#x60; and &#x60;desc&#x60;. E.g., &#x60;name_desc&#x60;, &#x60;start_time_asc&#x60;.
+   * @return ErrorsList
   */
-  public PaginatedWatchlistList getWatchlists (Integer limit, Integer offset, String query, String withColours, String include) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ErrorsList getGroupVisits (String limit, String offset, String locationIds, String sortWith) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
-    String path = "/watchlists";
+    String path = "/group_visits";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -469,9 +455,8 @@ public class WatchlistsApi {
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "offset", offset));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "query", query));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "with_colours", withColours));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include", include));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "location_ids", locationIds));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "sort_with", sortWith));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -490,7 +475,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (PaginatedWatchlistList) ApiInvoker.deserialize(localVarResponse, "", PaginatedWatchlistList.class);
+         return (ErrorsList) ApiInvoker.deserialize(localVarResponse, "", ErrorsList.class);
       } else {
          return null;
       }
@@ -512,16 +497,16 @@ public class WatchlistsApi {
   }
 
       /**
-   * List all Watchlists
-   * Gets a list of all &#x60;Watchlist&#x60; entities.
-   * @param limit Limits the results to a specified number, defaults to 50   * @param offset Offsets the results to a specified number, defaults to 0   * @param query Query the results by &#x60;first_name&#x60;, &#x60;last_name&#x60;, &#x60;email&#x60;, &#x60;colour&#x60;, and &#x60;notes&#x60; all at once.   * @param withColours A comma separated list of case-insensitive colour values. i.e., &#x60;red&#x60;, &#x60;green&#x60;, &#x60;yellow&#x60;, and &#x60;orange&#x60;   * @param include A list of comma-separated related models to include
+   * List all Group Visits (Appointments)
+   * Gets a list of all &#x60;GroupVisit&#x60; entities (Appointments).
+   * @param limit Limits the results to a specified number. Defaults to 50.   * @param offset Offsets the results to a specified number. Defaults to 0.   * @param locationIds A comma-separated string of locations IDs, to only show group visits (appointments) from those locations.   * @param sortWith A combination of attribute and direction, joined with an underscore, for sorting. Valid attributes are: &#x60;created_at&#x60;, &#x60;updated_at&#x60;, &#x60;name&#x60;, and &#x60;start_time&#x60;. Valid directions are &#x60;asc&#x60; and &#x60;desc&#x60;. E.g., &#x60;name_desc&#x60;, &#x60;start_time_asc&#x60;.
   */
-  public void getWatchlists (Integer limit, Integer offset, String query, String withColours, String include, final Response.Listener<PaginatedWatchlistList> responseListener, final Response.ErrorListener errorListener) {
+  public void getGroupVisits (String limit, String offset, String locationIds, String sortWith, final Response.Listener<ErrorsList> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
     // create path and map variables
-    String path = "/watchlists".replaceAll("\\{format\\}","json");
+    String path = "/group_visits".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -532,9 +517,8 @@ public class WatchlistsApi {
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "offset", offset));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "query", query));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "with_colours", withColours));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include", include));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "location_ids", locationIds));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "sort_with", sortWith));
 
 
     String[] contentTypes = {
@@ -561,7 +545,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((PaginatedWatchlistList) ApiInvoker.deserialize(localVarResponse,  "", PaginatedWatchlistList.class));
+              responseListener.onResponse((ErrorsList) ApiInvoker.deserialize(localVarResponse,  "", ErrorsList.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -577,28 +561,23 @@ public class WatchlistsApi {
     }
   }
   /**
-  * Update a Watchlist
-  * Update an existing &#x60;Watchlist&#x60; record. Every operation against this endpoint is recorded in the audit log.
-   * @param watchlistId 
-   * @param watchlistCreateParams The watchlist record attributes to update
+  * Update a Group Visit (Appointment)
+  * Updates an existing &#x60;GroupVisit&#x60; (Appointment).
+   * @param groupVisitId 
    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
-   * @return Watchlist
+   * @param groupVisitUpdateParams 
+   * @return GroupVisit
   */
-  public Watchlist updateWatchlist (String watchlistId, WatchlistCreateParams watchlistCreateParams, String idempotencyKey) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = watchlistCreateParams;
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling updateWatchlist"));
-    }
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist"));
+  public GroupVisit updateGroupVisit (String groupVisitId, String idempotencyKey, GroupVisitUpdateParams groupVisitUpdateParams) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = groupVisitUpdateParams;
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling updateGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling updateGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -626,7 +605,7 @@ public class WatchlistsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (Watchlist) ApiInvoker.deserialize(localVarResponse, "", Watchlist.class);
+         return (GroupVisit) ApiInvoker.deserialize(localVarResponse, "", GroupVisit.class);
       } else {
          return null;
       }
@@ -648,26 +627,21 @@ public class WatchlistsApi {
   }
 
       /**
-   * Update a Watchlist
-   * Update an existing &#x60;Watchlist&#x60; record. Every operation against this endpoint is recorded in the audit log.
-   * @param watchlistId    * @param watchlistCreateParams The watchlist record attributes to update   * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored
+   * Update a Group Visit (Appointment)
+   * Updates an existing &#x60;GroupVisit&#x60; (Appointment).
+   * @param groupVisitId    * @param idempotencyKey An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored   * @param groupVisitUpdateParams 
   */
-  public void updateWatchlist (String watchlistId, WatchlistCreateParams watchlistCreateParams, String idempotencyKey, final Response.Listener<Watchlist> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = watchlistCreateParams;
+  public void updateGroupVisit (String groupVisitId, String idempotencyKey, GroupVisitUpdateParams groupVisitUpdateParams, final Response.Listener<GroupVisit> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = groupVisitUpdateParams;
 
-    // verify the required parameter 'watchlistId' is set
-    if (watchlistId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistId' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistId' when calling updateWatchlist"));
-    }
-    // verify the required parameter 'watchlistCreateParams' is set
-    if (watchlistCreateParams == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist",
-        new ApiException(400, "Missing the required parameter 'watchlistCreateParams' when calling updateWatchlist"));
+    // verify the required parameter 'groupVisitId' is set
+    if (groupVisitId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'groupVisitId' when calling updateGroupVisit",
+        new ApiException(400, "Missing the required parameter 'groupVisitId' when calling updateGroupVisit"));
     }
 
     // create path and map variables
-    String path = "/watchlists/{watchlist_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "watchlist_id" + "\\}", apiInvoker.escapeString(watchlistId.toString()));
+    String path = "/group_visits/{group_visit_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "group_visit_id" + "\\}", apiInvoker.escapeString(groupVisitId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -703,7 +677,7 @@ public class WatchlistsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((Watchlist) ApiInvoker.deserialize(localVarResponse,  "", Watchlist.class));
+              responseListener.onResponse((GroupVisit) ApiInvoker.deserialize(localVarResponse,  "", GroupVisit.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

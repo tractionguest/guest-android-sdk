@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **endDate** | [**Date**](Date.md) |  |  [optional]
 **email** | **String** |  |  [optional]
 **company** | **String** |  |  [optional]
+**groupVisitId** | **Integer** |  |  [optional]
 
 
 
