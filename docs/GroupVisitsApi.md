@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ## getGroupVisits
 
-> ErrorsList getGroupVisits(limit, offset, locationIds, sortWith)
+> PaginatedGroupVisitsList getGroupVisits(limit, offset, locationIds, sortWith)
 
 List all Group Visits (Appointments)
 
@@ -173,7 +173,7 @@ String offset = null; // String | Offsets the results to a specified number. Def
 String locationIds = null; // String | A comma-separated string of locations IDs, to only show group visits (appointments) from those locations.
 String sortWith = null; // String | A combination of attribute and direction, joined with an underscore, for sorting. Valid attributes are: `created_at`, `updated_at`, `name`, and `start_time`. Valid directions are `asc` and `desc`. E.g., `name_desc`, `start_time_asc`.
 try {
-    ErrorsList result = apiInstance.getGroupVisits(limit, offset, locationIds, sortWith);
+    PaginatedGroupVisitsList result = apiInstance.getGroupVisits(limit, offset, locationIds, sortWith);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupVisitsApi#getGroupVisits");
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ErrorsList**](ErrorsList.md)
+[**PaginatedGroupVisitsList**](PaginatedGroupVisitsList.md)
 
 ### Authorization
 

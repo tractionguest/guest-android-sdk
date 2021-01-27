@@ -27,6 +27,7 @@ import org.openapitools.client.model.ErrorsList;
 import org.openapitools.client.model.GroupVisit;
 import org.openapitools.client.model.GroupVisitCreateParams;
 import org.openapitools.client.model.GroupVisitUpdateParams;
+import org.openapitools.client.model.PaginatedGroupVisitsList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -439,9 +440,9 @@ public class GroupVisitsApi {
    * @param offset Offsets the results to a specified number. Defaults to 0.
    * @param locationIds A comma-separated string of locations IDs, to only show group visits (appointments) from those locations.
    * @param sortWith A combination of attribute and direction, joined with an underscore, for sorting. Valid attributes are: &#x60;created_at&#x60;, &#x60;updated_at&#x60;, &#x60;name&#x60;, and &#x60;start_time&#x60;. Valid directions are &#x60;asc&#x60; and &#x60;desc&#x60;. E.g., &#x60;name_desc&#x60;, &#x60;start_time_asc&#x60;.
-   * @return ErrorsList
+   * @return PaginatedGroupVisitsList
   */
-  public ErrorsList getGroupVisits (String limit, String offset, String locationIds, String sortWith) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PaginatedGroupVisitsList getGroupVisits (String limit, String offset, String locationIds, String sortWith) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -475,7 +476,7 @@ public class GroupVisitsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (ErrorsList) ApiInvoker.deserialize(localVarResponse, "", ErrorsList.class);
+         return (PaginatedGroupVisitsList) ApiInvoker.deserialize(localVarResponse, "", PaginatedGroupVisitsList.class);
       } else {
          return null;
       }
@@ -501,7 +502,7 @@ public class GroupVisitsApi {
    * Gets a list of all &#x60;GroupVisit&#x60; entities (Appointments).
    * @param limit Limits the results to a specified number. Defaults to 50.   * @param offset Offsets the results to a specified number. Defaults to 0.   * @param locationIds A comma-separated string of locations IDs, to only show group visits (appointments) from those locations.   * @param sortWith A combination of attribute and direction, joined with an underscore, for sorting. Valid attributes are: &#x60;created_at&#x60;, &#x60;updated_at&#x60;, &#x60;name&#x60;, and &#x60;start_time&#x60;. Valid directions are &#x60;asc&#x60; and &#x60;desc&#x60;. E.g., &#x60;name_desc&#x60;, &#x60;start_time_asc&#x60;.
   */
-  public void getGroupVisits (String limit, String offset, String locationIds, String sortWith, final Response.Listener<ErrorsList> responseListener, final Response.ErrorListener errorListener) {
+  public void getGroupVisits (String limit, String offset, String locationIds, String sortWith, final Response.Listener<PaginatedGroupVisitsList> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -545,7 +546,7 @@ public class GroupVisitsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((ErrorsList) ApiInvoker.deserialize(localVarResponse,  "", ErrorsList.class));
+              responseListener.onResponse((PaginatedGroupVisitsList) ApiInvoker.deserialize(localVarResponse,  "", PaginatedGroupVisitsList.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

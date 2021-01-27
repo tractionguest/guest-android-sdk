@@ -197,6 +197,10 @@ public class JsonUtil {
       return new TypeToken<List<PaginatedEmailTemplatesList>>(){}.getType();
     }
     
+    if ("PaginatedGroupVisitsList".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PaginatedGroupVisitsList>>(){}.getType();
+    }
+    
     if ("PaginatedHostsList".equalsIgnoreCase(className)) {
       return new TypeToken<List<PaginatedHostsList>>(){}.getType();
     }
@@ -445,6 +449,10 @@ public class JsonUtil {
     
     if ("PaginatedEmailTemplatesList".equalsIgnoreCase(className)) {
       return new TypeToken<PaginatedEmailTemplatesList>(){}.getType();
+    }
+    
+    if ("PaginatedGroupVisitsList".equalsIgnoreCase(className)) {
+      return new TypeToken<PaginatedGroupVisitsList>(){}.getType();
     }
     
     if ("PaginatedHostsList".equalsIgnoreCase(className)) {
