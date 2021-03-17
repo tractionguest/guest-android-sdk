@@ -79,26 +79,18 @@ public class AuditLogsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://us.tractionguest.com/api/v3*
+All URIs are relative to *https://tractionguest.ca/api/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuditLogsApi* | [**getAuditLog**](docs/AuditLogsApi.md#getAuditLog) | **GET** /audit_logs/{audit_log_id} | Get an AuditLog
 *AuditLogsApi* | [**getAuditLogs**](docs/AuditLogsApi.md#getAuditLogs) | **GET** /audit_logs | List all AuditLogs
-*BatchesApi* | [**batchDeleteInvites**](docs/BatchesApi.md#batchDeleteInvites) | **POST** /invites/batch_delete | Delete Multiple Invites
-*BatchesApi* | [**getBatch**](docs/BatchesApi.md#getBatch) | **GET** /batches/{batch_id} | Get a BatchJob
 *CapacitiesApi* | [**getCapacity**](docs/CapacitiesApi.md#getCapacity) | **GET** /locations/{location_id}/capacities | Get the current capacity details for a location
 *CapacitiesApi* | [**getCapacityForecast**](docs/CapacitiesApi.md#getCapacityForecast) | **GET** /locations/{location_id}/capacity_forecasts | Get the capacity details for a location
 *EmailTemplatesApi* | [**getEmailTemplates**](docs/EmailTemplatesApi.md#getEmailTemplates) | **GET** /email_templates | List all EmailTemplates
-*GroupVisitsApi* | [**createGroupVisit**](docs/GroupVisitsApi.md#createGroupVisit) | **POST** /group_visits | Create a new Group Visit (Appointment)
-*GroupVisitsApi* | [**deleteGroupVisit**](docs/GroupVisitsApi.md#deleteGroupVisit) | **DELETE** /group_visits/{group_visit_id} | Delete a Group Visit (Appointment)
-*GroupVisitsApi* | [**getGroupVisit**](docs/GroupVisitsApi.md#getGroupVisit) | **GET** /group_visits/{group_visit_id} | Get a Group Visit (Appointment)
-*GroupVisitsApi* | [**getGroupVisits**](docs/GroupVisitsApi.md#getGroupVisits) | **GET** /group_visits | List all Group Visits (Appointments)
-*GroupVisitsApi* | [**updateGroupVisit**](docs/GroupVisitsApi.md#updateGroupVisit) | **PUT** /group_visits/{group_visit_id} | Update a Group Visit (Appointment)
 *HostsApi* | [**createHost**](docs/HostsApi.md#createHost) | **POST** /hosts | Create a Host
 *HostsApi* | [**createHosts**](docs/HostsApi.md#createHosts) | **POST** /hosts/batch | Create multiple Hosts
 *HostsApi* | [**getHosts**](docs/HostsApi.md#getHosts) | **GET** /hosts | List all Hosts
-*InvitesApi* | [**batchDeleteInvites**](docs/InvitesApi.md#batchDeleteInvites) | **POST** /invites/batch_delete | Delete Multiple Invites
 *InvitesApi* | [**createLocationInvite**](docs/InvitesApi.md#createLocationInvite) | **POST** /locations/{location_id}/invites | Create an Invite
 *InvitesApi* | [**createRegistrationInvite**](docs/InvitesApi.md#createRegistrationInvite) | **POST** /registrations/{registration_id}/invites | Create an Invite from a Registration
 *InvitesApi* | [**deleteInvite**](docs/InvitesApi.md#deleteInvite) | **DELETE** /invites/{invite_id} | Deletes an Invite
@@ -112,8 +104,11 @@ Class | Method | HTTP request | Description
 *PackagesApi* | [**getPackage**](docs/PackagesApi.md#getPackage) | **GET** /packages/{package_id} | Get Package
 *PackagesApi* | [**getPackages**](docs/PackagesApi.md#getPackages) | **GET** /packages | Get packages
 *PackagesApi* | [**updatePackage**](docs/PackagesApi.md#updatePackage) | **PUT** /packages/{package_id} | Update Package
+*RegistrationsApi* | [**createRegistrationSignout**](docs/RegistrationsApi.md#createRegistrationSignout) | **POST** /registrations/{registration_id}/signouts | 
 *RegistrationsApi* | [**getRegistration**](docs/RegistrationsApi.md#getRegistration) | **GET** /registrations/{registration_id} | Get a Registration
 *RegistrationsApi* | [**getRegistrations**](docs/RegistrationsApi.md#getRegistrations) | **GET** /registrations | List all Registrations
+*SigninsApi* | [**createRegistrationSignin**](docs/SigninsApi.md#createRegistrationSignin) | **POST** /registrations/{registration_id}/signins | 
+*SigninsApi* | [**createRegistrationSignout**](docs/SigninsApi.md#createRegistrationSignout) | **POST** /registrations/{registration_id}/signouts | 
 *SigninsApi* | [**createSignin**](docs/SigninsApi.md#createSignin) | **POST** /signins | Create Signin
 *SigninsApi* | [**getSignin**](docs/SigninsApi.md#getSignin) | **GET** /signins/{signin_id} | Get a Signin
 *SigninsApi* | [**getSignins**](docs/SigninsApi.md#getSignins) | **GET** /signins | List all Signins
@@ -141,13 +136,10 @@ Class | Method | HTTP request | Description
  - [ErrorsList](docs/ErrorsList.md)
  - [ExternalWatchlistResult](docs/ExternalWatchlistResult.md)
  - [GroupVisit](docs/GroupVisit.md)
- - [GroupVisitCreateParams](docs/GroupVisitCreateParams.md)
- - [GroupVisitUpdateParams](docs/GroupVisitUpdateParams.md)
  - [GuestResponse](docs/GuestResponse.md)
  - [Host](docs/Host.md)
  - [HostBatchCreateParams](docs/HostBatchCreateParams.md)
  - [HostCreateParams](docs/HostCreateParams.md)
- - [IdentifierList](docs/IdentifierList.md)
  - [Image](docs/Image.md)
  - [InternalWatchlistResult](docs/InternalWatchlistResult.md)
  - [Invite](docs/Invite.md)
@@ -163,7 +155,6 @@ Class | Method | HTTP request | Description
  - [PackageUpdateParams](docs/PackageUpdateParams.md)
  - [PaginatedAuditLogsList](docs/PaginatedAuditLogsList.md)
  - [PaginatedEmailTemplatesList](docs/PaginatedEmailTemplatesList.md)
- - [PaginatedGroupVisitsList](docs/PaginatedGroupVisitsList.md)
  - [PaginatedHostsList](docs/PaginatedHostsList.md)
  - [PaginatedInvitesList](docs/PaginatedInvitesList.md)
  - [PaginatedLocationsList](docs/PaginatedLocationsList.md)

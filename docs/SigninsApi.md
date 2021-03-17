@@ -1,14 +1,112 @@
 # SigninsApi
 
-All URIs are relative to *https://us.tractionguest.com/api/v3*
+All URIs are relative to *https://tractionguest.ca/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createRegistrationSignin**](SigninsApi.md#createRegistrationSignin) | **POST** /registrations/{registration_id}/signins | 
+[**createRegistrationSignout**](SigninsApi.md#createRegistrationSignout) | **POST** /registrations/{registration_id}/signouts | 
 [**createSignin**](SigninsApi.md#createSignin) | **POST** /signins | Create Signin
 [**getSignin**](SigninsApi.md#getSignin) | **GET** /signins/{signin_id} | Get a Signin
 [**getSignins**](SigninsApi.md#getSignins) | **GET** /signins | List all Signins
 [**updateSignin**](SigninsApi.md#updateSignin) | **PUT** /signins/{signin_id} | Update a Signin
 
+
+
+## createRegistrationSignin
+
+> SigninDetail createRegistrationSignin(registrationId, idempotencyKey)
+
+
+
+Creates a new &#x60;Signin&#x60; from a &#x60;Registration&#x60;
+
+### Example
+
+```java
+// Import classes:
+//import GuestSDK.SigninsApi;
+
+SigninsApi apiInstance = new SigninsApi();
+String registrationId = null; // String | 
+String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
+try {
+    SigninDetail result = apiInstance.createRegistrationSignin(registrationId, idempotencyKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SigninsApi#createRegistrationSignin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registrationId** | **String**|  | [default to null]
+ **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
+
+### Return type
+
+[**SigninDetail**](SigninDetail.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## createRegistrationSignout
+
+> SigninDetail createRegistrationSignout(registrationId, idempotencyKey)
+
+
+
+Signs out the last &#x60;Signin&#x60; on a &#x60;Registration&#x60;. Returns the &#x60;SigninDetail&#x60; that was signed out, if the sign out is successful.
+
+### Example
+
+```java
+// Import classes:
+//import GuestSDK.SigninsApi;
+
+SigninsApi apiInstance = new SigninsApi();
+String registrationId = null; // String | 
+String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
+try {
+    SigninDetail result = apiInstance.createRegistrationSignout(registrationId, idempotencyKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SigninsApi#createRegistrationSignout");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registrationId** | **String**|  | [default to null]
+ **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
+
+### Return type
+
+[**SigninDetail**](SigninDetail.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## createSignin

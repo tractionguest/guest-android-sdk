@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**registrationId** | **String** | UUID of a Registration |  [optional]
+**registrationId** | [**UUID**](UUID.md) | UUID of a Registration |  [optional]
 **email** | **String** | E-mail, ignored if &#x60;registration_id&#x60; is included |  [optional]
 **company** | **String** | Company name, ignored if &#x60;registration_id&#x60; is included |  [optional]
 **lastName** | **String** | Last name, ignored if &#x60;registration_id&#x60; is included |  [optional]

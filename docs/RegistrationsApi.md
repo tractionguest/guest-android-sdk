@@ -1,12 +1,61 @@
 # RegistrationsApi
 
-All URIs are relative to *https://us.tractionguest.com/api/v3*
+All URIs are relative to *https://tractionguest.ca/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createRegistrationSignout**](RegistrationsApi.md#createRegistrationSignout) | **POST** /registrations/{registration_id}/signouts | 
 [**getRegistration**](RegistrationsApi.md#getRegistration) | **GET** /registrations/{registration_id} | Get a Registration
 [**getRegistrations**](RegistrationsApi.md#getRegistrations) | **GET** /registrations | List all Registrations
 
+
+
+## createRegistrationSignout
+
+> SigninDetail createRegistrationSignout(registrationId, idempotencyKey)
+
+
+
+Signs out the last &#x60;Signin&#x60; on a &#x60;Registration&#x60;. Returns the &#x60;SigninDetail&#x60; that was signed out, if the sign out is successful.
+
+### Example
+
+```java
+// Import classes:
+//import GuestSDK.RegistrationsApi;
+
+RegistrationsApi apiInstance = new RegistrationsApi();
+String registrationId = null; // String | 
+String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
+try {
+    SigninDetail result = apiInstance.createRegistrationSignout(registrationId, idempotencyKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RegistrationsApi#createRegistrationSignout");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registrationId** | **String**|  | [default to null]
+ **idempotencyKey** | **String**| An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it&#39;s submitted. We store idempotency keys for only 24 hours. Any &#x60;Idempotency-Key&#x60; shorter than 10 characters will be ignored | [optional] [default to null]
+
+### Return type
+
+[**SigninDetail**](SigninDetail.md)
+
+### Authorization
+
+[TractionGuestAuth](../README.md#TractionGuestAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## getRegistration
@@ -59,7 +108,7 @@ Name | Type | Description  | Notes
 
 ## getRegistrations
 
-> PaginatedRegistrationsList getRegistrations(limit, offset, locationIds, createdBefore, createdAfter, needsConfirmation)
+> PaginatedRegistrationsList getRegistrations(limit, offset, locationIds, createdBefore, createdAfter)
 
 List all Registrations
 
@@ -77,9 +126,8 @@ Integer offset = null; // Integer | Offsets the results to a specified number, d
 String locationIds = null; // String | A comma separated list of Location IDs
 String createdBefore = null; // String | Restricts results to only those that were created before the provided date
 String createdAfter = null; // String | Restricts results to only those that were created after the provided date
-Boolean needsConfirmation = null; // Boolean | A confirmed `Registration` is one with an associated `Invite`. This filter returns those without an `Invite` when true, and those with an `Invite` when false.
 try {
-    PaginatedRegistrationsList result = apiInstance.getRegistrations(limit, offset, locationIds, createdBefore, createdAfter, needsConfirmation);
+    PaginatedRegistrationsList result = apiInstance.getRegistrations(limit, offset, locationIds, createdBefore, createdAfter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RegistrationsApi#getRegistrations");
@@ -97,7 +145,6 @@ Name | Type | Description  | Notes
  **locationIds** | **String**| A comma separated list of Location IDs | [optional] [default to null]
  **createdBefore** | **String**| Restricts results to only those that were created before the provided date | [optional] [default to null]
  **createdAfter** | **String**| Restricts results to only those that were created after the provided date | [optional] [default to null]
- **needsConfirmation** | **Boolean**| A confirmed &#x60;Registration&#x60; is one with an associated &#x60;Invite&#x60;. This filter returns those without an &#x60;Invite&#x60; when true, and those with an &#x60;Invite&#x60; when false. | [optional] [default to null]
 
 ### Return type
 

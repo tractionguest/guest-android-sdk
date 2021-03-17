@@ -14,12 +14,6 @@ Name | Type | Description | Notes
 **endTime** | **String** |  |  [optional]
 **createdAt** | **String** |  |  [optional]
 **updatedAt** | **String** |  |  [optional]
-**registrationLimit** | **Integer** |  |  [optional]
-**registrationUrl** | **String** |  |  [optional]
-**invitesCount** | **Integer** |  |  [optional]
-**unconfirmedRegistrationsCount** | **Integer** |  |  [optional]
-**manualRegistrationApproval** | **Boolean** |  |  [optional]
-**publicRegistrationEnabled** | **Boolean** |  |  [optional]
 
 
 

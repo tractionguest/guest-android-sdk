@@ -16,6 +16,13 @@ Name | Type | Description | Notes
 **name** | **String** | Guest&#39;s name |  [optional]
 **createdAt** | [**Date**](Date.md) | Datetime when registration was created | 
 **signin** | [**Signin**](Signin.md) |  |  [optional]
+**status** | [**StatusEnum**](#StatusEnum) | An enum describing the state of the &#x60;Registration&#x60; which can have one of the following: not_started, started, completed, rejected, signed_in signed_out |  [optional]
+
+
+## Enum: StatusEnum
+
+Name | Value
+---- | -----
 
 
 
