@@ -93,7 +93,7 @@ public class GroupVisitsApi {
       // normal form params
     }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
@@ -157,7 +157,7 @@ public class GroupVisitsApi {
       // normal form params
           }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -218,7 +218,7 @@ public class GroupVisitsApi {
       // normal form params
     }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames);
@@ -287,7 +287,7 @@ public class GroupVisitsApi {
       // normal form params
           }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -342,7 +342,7 @@ public class GroupVisitsApi {
       // normal form params
     }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
@@ -410,7 +410,7 @@ public class GroupVisitsApi {
       // normal form params
           }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -471,7 +471,7 @@ public class GroupVisitsApi {
       // normal form params
     }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
@@ -538,7 +538,7 @@ public class GroupVisitsApi {
       // normal form params
           }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -601,7 +601,7 @@ public class GroupVisitsApi {
       // normal form params
     }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
@@ -670,7 +670,7 @@ public class GroupVisitsApi {
       // normal form params
           }
 
-    String[] authNames = new String[] { "TractionGuestAuth" };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
