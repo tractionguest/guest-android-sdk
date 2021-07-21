@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  |  [optional]
 **email** | **String** |  |  [optional]
 **colour** | [**ColourEnum**](#ColourEnum) |  |  [optional]
+**base64Image** | **byte[]** | A base64 encoded image. base64_image should be strict encoded  |  [optional]
 
 
 ## Enum: ColourEnum

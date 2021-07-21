@@ -17,9 +17,9 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Parameters required for updating or creating watchlist records
+ * Parameters required for updating or creating watchlist records 
  **/
-@ApiModel(description = "Parameters required for updating or creating watchlist records")
+@ApiModel(description = "Parameters required for updating or creating watchlist records ")
 public class WatchlistCreateParams {
   
   @SerializedName("aliases")
@@ -37,6 +37,8 @@ public class WatchlistCreateParams {
   };
   @SerializedName("colour")
   private ColourEnum colour = null;
+  @SerializedName("base64_image")
+  private byte[] base64Image = null;
 
   /**
    **/
@@ -98,6 +100,17 @@ public class WatchlistCreateParams {
     this.colour = colour;
   }
 
+  /**
+   * A base64 encoded image. base64_image should be strict encoded 
+   **/
+  @ApiModelProperty(value = "A base64 encoded image. base64_image should be strict encoded ")
+  public byte[] getBase64Image() {
+    return base64Image;
+  }
+  public void setBase64Image(byte[] base64Image) {
+    this.base64Image = base64Image;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -113,7 +126,8 @@ public class WatchlistCreateParams {
         (this.lastName == null ? watchlistCreateParams.lastName == null : this.lastName.equals(watchlistCreateParams.lastName)) &&
         (this.firstName == null ? watchlistCreateParams.firstName == null : this.firstName.equals(watchlistCreateParams.firstName)) &&
         (this.email == null ? watchlistCreateParams.email == null : this.email.equals(watchlistCreateParams.email)) &&
-        (this.colour == null ? watchlistCreateParams.colour == null : this.colour.equals(watchlistCreateParams.colour));
+        (this.colour == null ? watchlistCreateParams.colour == null : this.colour.equals(watchlistCreateParams.colour)) &&
+        (this.base64Image == null ? watchlistCreateParams.base64Image == null : this.base64Image.equals(watchlistCreateParams.base64Image));
   }
 
   @Override
@@ -125,6 +139,7 @@ public class WatchlistCreateParams {
     result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.colour == null ? 0: this.colour.hashCode());
+    result = 31 * result + (this.base64Image == null ? 0: this.base64Image.hashCode());
     return result;
   }
 
@@ -139,6 +154,7 @@ public class WatchlistCreateParams {
     sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  email: ").append(email).append("\n");
     sb.append("  colour: ").append(colour).append("\n");
+    sb.append("  base64Image: ").append(base64Image).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
