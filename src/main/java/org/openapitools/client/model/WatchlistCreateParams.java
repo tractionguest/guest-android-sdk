@@ -39,6 +39,8 @@ public class WatchlistCreateParams {
   private ColourEnum colour = null;
   @SerializedName("base64_image")
   private byte[] base64Image = null;
+  @SerializedName("driver_license")
+  private String driverLicense = null;
 
   /**
    **/
@@ -111,6 +113,16 @@ public class WatchlistCreateParams {
     this.base64Image = base64Image;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getDriverLicense() {
+    return driverLicense;
+  }
+  public void setDriverLicense(String driverLicense) {
+    this.driverLicense = driverLicense;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -127,7 +139,8 @@ public class WatchlistCreateParams {
         (this.firstName == null ? watchlistCreateParams.firstName == null : this.firstName.equals(watchlistCreateParams.firstName)) &&
         (this.email == null ? watchlistCreateParams.email == null : this.email.equals(watchlistCreateParams.email)) &&
         (this.colour == null ? watchlistCreateParams.colour == null : this.colour.equals(watchlistCreateParams.colour)) &&
-        (this.base64Image == null ? watchlistCreateParams.base64Image == null : this.base64Image.equals(watchlistCreateParams.base64Image));
+        (this.base64Image == null ? watchlistCreateParams.base64Image == null : this.base64Image.equals(watchlistCreateParams.base64Image)) &&
+        (this.driverLicense == null ? watchlistCreateParams.driverLicense == null : this.driverLicense.equals(watchlistCreateParams.driverLicense));
   }
 
   @Override
@@ -140,6 +153,7 @@ public class WatchlistCreateParams {
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.colour == null ? 0: this.colour.hashCode());
     result = 31 * result + (this.base64Image == null ? 0: this.base64Image.hashCode());
+    result = 31 * result + (this.driverLicense == null ? 0: this.driverLicense.hashCode());
     return result;
   }
 
@@ -155,6 +169,7 @@ public class WatchlistCreateParams {
     sb.append("  email: ").append(email).append("\n");
     sb.append("  colour: ").append(colour).append("\n");
     sb.append("  base64Image: ").append(base64Image).append("\n");
+    sb.append("  driverLicense: ").append(driverLicense).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
