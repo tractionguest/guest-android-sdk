@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **email** | **String** |  |  [optional]
 **colour** | [**ColourEnum**](#ColourEnum) |  |  [optional]
 **base64Image** | **byte[]** | A base64 encoded image. base64_image should be strict encoded  |  [optional]
+**driverLicense** | **String** |  |  [optional]
 
 
 ## Enum: ColourEnum
