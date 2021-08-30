@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  |  [optional]
 **email** | **String** |  |  [optional]
 **colour** | [**ColourEnum**](#ColourEnum) |  |  [optional]
+**driverLicense** | **String** |  |  [optional]
 
 
 ## Enum: ColourEnum
