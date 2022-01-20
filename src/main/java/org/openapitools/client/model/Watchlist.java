@@ -13,6 +13,7 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import java.util.Date;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -43,6 +44,10 @@ public class Watchlist {
   private ColourEnum colour = null;
   @SerializedName("driver_license")
   private String driverLicense = null;
+  @SerializedName("created_at")
+  private Date createdAt = null;
+  @SerializedName("updated_at")
+  private Date updatedAt = null;
 
   /**
    **/
@@ -134,6 +139,26 @@ public class Watchlist {
     this.driverLicense = driverLicense;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Date getUpdatedAt() {
+    return updatedAt;
+  }
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -152,7 +177,9 @@ public class Watchlist {
         (this.firstName == null ? watchlist.firstName == null : this.firstName.equals(watchlist.firstName)) &&
         (this.email == null ? watchlist.email == null : this.email.equals(watchlist.email)) &&
         (this.colour == null ? watchlist.colour == null : this.colour.equals(watchlist.colour)) &&
-        (this.driverLicense == null ? watchlist.driverLicense == null : this.driverLicense.equals(watchlist.driverLicense));
+        (this.driverLicense == null ? watchlist.driverLicense == null : this.driverLicense.equals(watchlist.driverLicense)) &&
+        (this.createdAt == null ? watchlist.createdAt == null : this.createdAt.equals(watchlist.createdAt)) &&
+        (this.updatedAt == null ? watchlist.updatedAt == null : this.updatedAt.equals(watchlist.updatedAt));
   }
 
   @Override
@@ -167,6 +194,8 @@ public class Watchlist {
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.colour == null ? 0: this.colour.hashCode());
     result = 31 * result + (this.driverLicense == null ? 0: this.driverLicense.hashCode());
+    result = 31 * result + (this.createdAt == null ? 0: this.createdAt.hashCode());
+    result = 31 * result + (this.updatedAt == null ? 0: this.updatedAt.hashCode());
     return result;
   }
 
@@ -184,6 +213,8 @@ public class Watchlist {
     sb.append("  email: ").append(email).append("\n");
     sb.append("  colour: ").append(colour).append("\n");
     sb.append("  driverLicense: ").append(driverLicense).append("\n");
+    sb.append("  createdAt: ").append(createdAt).append("\n");
+    sb.append("  updatedAt: ").append(updatedAt).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
