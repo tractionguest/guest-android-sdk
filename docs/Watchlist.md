@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **email** | **String** |  |  [optional]
 **colour** | [**ColourEnum**](#ColourEnum) |  |  [optional]
 **driverLicense** | **String** |  |  [optional]
+**createdAt** | [**Date**](Date.md) |  |  [optional]
+**updatedAt** | [**Date**](Date.md) |  |  [optional]
 
 
 ## Enum: ColourEnum

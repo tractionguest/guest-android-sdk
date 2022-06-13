@@ -10,12 +10,14 @@ Name | Type | Description | Notes
 **registration** | [**Registration**](Registration.md) |  |  [optional]
 **mobileNumber** | **String** |  |  [optional]
 **email** | **String** |  | 
-**endDate** | [**Date**](Date.md) |  |  [optional]
+**endDate** | [**Date**](Date.md) | Deprecated. Use &#x60;end_date_utc&#x60; instead. |  [optional]
+**endDateUtc** | [**Date**](Date.md) |  |  [optional]
 **inviteWatchlist** | [**InviteWatchlist**](InviteWatchlist.md) |  |  [optional]
 **hosts** | [**List&lt;Host&gt;**](Host.md) |  |  [optional]
 **watchlistColour** | [**WatchlistColourEnum**](#WatchlistColourEnum) |  |  [optional]
 **location** | [**Location**](Location.md) |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) | Deprecated. Use &#x60;start_date_utc&#x60; instead. |  [optional]
+**startDateUtc** | [**Date**](Date.md) |  |  [optional]
 **lastName** | **String** |  | 
 **firstName** | **String** |  | 
 **groupVisit** | [**GroupVisit**](GroupVisit.md) |  |  [optional]

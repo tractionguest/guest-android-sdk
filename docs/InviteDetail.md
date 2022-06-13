@@ -16,10 +16,12 @@ Name | Type | Description | Notes
 **watchlistColour** | [**WatchlistColourEnum**](#WatchlistColourEnum) |  |  [optional]
 **location** | [**Location**](Location.md) |  |  [optional]
 **hosts** | [**List&lt;Host&gt;**](Host.md) |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) | Deprecated. Use &#x60;start_date_utc&#x60; instead. |  [optional]
+**startDateUtc** | [**Date**](Date.md) |  |  [optional]
 **lastName** | **String** |  | 
 **firstName** | **String** |  | 
-**endDate** | [**Date**](Date.md) |  |  [optional]
+**endDate** | [**Date**](Date.md) | Deprecated. Use &#x60;end_date_utc&#x60; instead. |  [optional]
+**endDateUtc** | [**Date**](Date.md) |  |  [optional]
 **email** | **String** |  | 
 **createdAt** | [**Date**](Date.md) |  |  [optional]
 **company** | **String** |  |  [optional]
