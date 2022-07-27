@@ -74,7 +74,7 @@ Creates a batch of &#x60;Host&#x60; records in an async queue. Please note, ever
 
 HostsApi apiInstance = new HostsApi();
 String idempotencyKey = null; // String | An optional idempotency key to allow for repeat API requests. Any API request with this key will only be executed once, no matter how many times it's submitted. We store idempotency keys for only 24 hours. Any `Idempotency-Key` shorter than 10 characters will be ignored
-HostBatchCreateParams hostBatchCreateParams = new HostBatchCreateParams(); // HostBatchCreateParams | 
+HostBatchCreateParams hostBatchCreateParams = {"hosts":[{"email":"string","first_name":"string","last_name":"string","profile_pic_url":"string","department":"string","mobile_number":"string"}]}; // HostBatchCreateParams | 
 try {
     BatchJob result = apiInstance.createHosts(idempotencyKey, hostBatchCreateParams);
     System.out.println(result);
