@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **company** | **String** |  |  [optional]
 **groupVisitId** | **Integer** |  |  [optional]
+**parkingStall** | [**InviteCreateParamsParkingStall**](InviteCreateParamsParkingStall.md) |  |  [optional]
 
 
 ## Enum: WatchlistColourEnum

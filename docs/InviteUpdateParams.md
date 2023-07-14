@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **email** | **String** |  |  [optional]
 **company** | **String** |  |  [optional]
 **groupVisitId** | **Integer** |  |  [optional]
+**licensePlate** | **String** |  |  [optional]
 
 
 

@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **company** | **String** |  |  [optional]
 **checkedIn** | **Boolean** |  |  [optional]
 **groupVisit** | [**GroupVisit**](GroupVisit.md) |  |  [optional]
+**licensePlate** | **String** |  |  [optional]
+**invitesParkingLot** | [**InviteDetailInvitesParkingLot**](InviteDetailInvitesParkingLot.md) |  |  [optional]
 
 
 ## Enum: WatchlistColourEnum
